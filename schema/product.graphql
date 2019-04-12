@@ -82,6 +82,9 @@ type ProductFeatureAppl {
 type Query {
   productCategory: [ProductCategory]
   productCategoryMember(productId: String productCategoryId: String): [ProductCategoryMember]
+  productFeatureIactnType: [ProductFeatureIactnType]
+  productFeature: [ProductFeature]
   productFeatureIactn(productFeatureId: String productFeatureIdTo: String productId: String): [ProductFeatureIactn]
+  productFeatureApplType: [ProductFeatureApplType]
   productFeatureAppl(productId: String productFeatureId: String): [ProductFeatureAppl]
 }

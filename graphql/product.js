@@ -69,6 +69,18 @@ const resolvers = {
           .filter(item => (productCategoryId ? item.productCategoryId === productCategoryId : true))
       );
     },
+    productFeatureIactnType: () => {
+      return jsonfile.readFile(typeFile)
+        .then(({ productFeatureIactnType }) => Object.keys(productFeatureIactnType).map(key => productFeatureIactnType[key]))
+    },
+    productFeatureApplType: () => {
+      return jsonfile.readFile(typeFile)
+        .then(({ productFeatureApplType }) => Object.keys(productFeatureApplType).map(key => productFeatureApplType[key]))
+    },
+    productFeature: () => {
+      return jsonfile.readFile(productFile)
+        .then(({ feature }) => Object.keys(feature).map(key => feature[key]))
+    },
     productFeatureIactn: (_, { productFeatureId, productFeatureIdTo, productId }) => {
       return jsonfile.readFile(productFile).then(({ featureIactn }) =>
         Object.keys(featureIactn)
