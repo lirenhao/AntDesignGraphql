@@ -1,0 +1,48 @@
+type ProductType {
+  productTypeId: ID!
+  productTypeName: String
+  parentTypeId: String
+  descript: String
+  lastUpdatedStamp: String
+  createdStamp: String
+  version: String
+}
+
+type ProductCategoryType {
+  productCategoryTypeId: ID!
+  parentTypeId: String
+  description: String
+  lastUpdatedStamp: String
+  createdStamp: String
+  version: String
+}
+
+type ProductFeatureType {
+  productFeatureTypeId: ID!
+  parentTypeId: String
+  hasTable: String
+  description: String
+  lastUpdatedStamp: String
+  createdStamp: String
+  version: String
+}
+
+type ProductFeatureIactnType {
+  productFeatureIactnTypeId: ID!
+  parentTypeId: String
+  hasTable: String
+  description: String
+  lastUpdatedStamp: String
+  createdStamp: String
+  version: String
+}
+
+type ProductFeatureApplType {
+  productFeatureApplTypeId: ID!
+  parentTypeId: String
+  hasTable: String
+  description: String
+  lastUpdatedStamp: String
+  createdStamp: String
+  version: String
+}

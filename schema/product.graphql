@@ -1,0 +1,87 @@
+# import ProductType ProductCategoryType ProductFeatureType ProductFeatureIactnType ProductFeatureApplType from 'type.graphql'
+type Product {
+  productId: ID!
+  productType: ProductType
+  primaryProductCategory: ProductCategory
+  manufacturePartyId: String
+  salesDiscWhenNotAvail: String
+  internalName: String
+  comments: String
+  productName: String!
+  description: String
+  createdByUserLogin: String
+  updatedByUserLogin: String
+  lastUpdatedStamp: String
+  createdStamp: String
+  version: String
+}
+# 产品类别
+type ProductCategory {
+  productCategoryId: ID!
+  productCategoryType: ProductCategoryType
+  primaryParentCategoryId: String
+  categoryName: String
+  description: String
+  lastUpdatedStamp: String
+  createdStamp: String
+  version: String
+}
+# 产品类别成员列表
+type ProductCategoryMember {
+  productCategory: ProductCategory
+  product: Product
+  fromDate: String
+  thruDate: String
+  comments: String
+  sequenceNum: String
+  quantity: Int
+  lastUpdatedStamp: String
+  createdStamp: String
+  version: String
+}
+# 产品特征
+type ProductFeature {
+  productFeatureId: ID!
+  productFeatureType: ProductFeatureType
+  description: String
+  uomId: String
+  numberSpecified: String
+  defaultAmount: String
+  defaultSequenceNum: String
+  ABBREV: String
+  idCode: String
+  lastUpdatedStamp: String
+  createdStamp: String
+  version: String
+}
+# 产品特征互作用
+type ProductFeatureIactn {
+  productFeature: ProductFeature 
+  productFeatureTo: ProductFeature 
+  productFeatureIactnType: ProductFeatureIactnType
+  product: Product 
+  lastUpdatedStamp: String 
+  createdStamp: String 
+  version: String 
+}
+
+# 产品特征适用性
+type ProductFeatureAppl {
+  product: Product 
+  productFeature: ProductFeature 
+  productFeatureApplType: ProductFeatureApplType 
+  fromDate: String 
+  thruDate: String 
+  sequenceNum: String 
+  amount: String 
+  lastUpdatedStamp: String 
+  createdStamp: String 
+  version: String 
+}
+
+type Query {
+  productCategory: [ProductCategory]
+  productCategoryMember(productId: String productCategoryId: String): [ProductCategoryMember]
+  productFeatureIactn(productFeatureId: String productFeatureIdTo: String productId: String): [ProductFeatureIactn]
+  productFeatureAppl(productId: String productFeatureId: String): [ProductFeatureAppl]
+}
