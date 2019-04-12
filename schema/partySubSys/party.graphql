@@ -1,0 +1,11 @@
+type party {
+  partyId:ID!
+  partyTypeId:String
+  defaultPartyIdentificationTypeId,String
+  extennalId:String
+  preferredCurrencyUomId:String
+  statusId:String
+  description:String
+  dataSourceId:String
+
+}

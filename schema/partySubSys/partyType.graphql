@@ -1,0 +1,12 @@
+import { getNormalizedTypescriptVersion } from 'tslint/lib/verify/parse';
+
+type partyType {
+    partyTypeId:ID!
+  partyTypeName:String
+  parentTypeId:String
+  hasTable:Boolean
+  description:String
+  lastUpdatedStamp:Date
+  createdStamp:Date
+  version:Int
+}
