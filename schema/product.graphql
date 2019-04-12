@@ -1,7 +1,9 @@
 # import ProductType ProductCategoryType ProductFeatureType ProductFeatureIactnType ProductFeatureApplType from 'type.graphql'
 type Product {
   productId: ID!
+  productTypeId: String
   productType: ProductType
+  primaryProductCategoryId: String
   primaryProductCategory: ProductCategory
   manufacturePartyId: String
   salesDiscWhenNotAvail: String
@@ -18,6 +20,7 @@ type Product {
 # 产品类别
 type ProductCategory {
   productCategoryId: ID!
+  productCategoryTypeId: String
   productCategoryType: ProductCategoryType
   primaryParentCategoryId: String
   categoryName: String
@@ -28,7 +31,9 @@ type ProductCategory {
 }
 # 产品类别成员列表
 type ProductCategoryMember {
+  productCategoryId: String
   productCategory: ProductCategory
+  productId: String
   product: Product
   fromDate: String
   thruDate: String
@@ -42,6 +47,7 @@ type ProductCategoryMember {
 # 产品特征
 type ProductFeature {
   productFeatureId: ID!
+  productFeatureTypeId: String
   productFeatureType: ProductFeatureType
   description: String
   uomId: String
@@ -56,19 +62,25 @@ type ProductFeature {
 }
 # 产品特征互作用
 type ProductFeatureIactn {
+  productFeatureId: String
   productFeature: ProductFeature 
+  productFeatureIdTo: String
   productFeatureTo: ProductFeature 
+  productFeatureIactnTypeId: String
   productFeatureIactnType: ProductFeatureIactnType
+  productId: String
   product: Product 
   lastUpdatedStamp: String 
   createdStamp: String 
   version: String 
 }
-
 # 产品特征适用性
 type ProductFeatureAppl {
+  productId: String
   product: Product 
+  productFeatureId: String
   productFeature: ProductFeature 
+  productFeatureApplTypeId: String
   productFeatureApplType: ProductFeatureApplType 
   fromDate: String 
   thruDate: String 
