@@ -1,0 +1,43 @@
+import { string } from 'prop-types';
+
+type  productAssoc  {
+    productId:ID! #产品标识
+    productIdTo:String #目标产品标识
+    productAssocTypeId:String #产品关联类型标识
+    fromDate:date #起始日期
+    thruDate:date #终止日期
+    sequenceNum:Float #序号数字
+    reason:String #原因
+    quantity:Float #数量
+    scrapFactor:Float #废品因素废料因子
+    instruction:String #指令
+    routingWorkEffortId:String #路由工作计划标识
+    estimateCalcMethod:String #预计计算方法
+    recurrenceInfoId:String #循环信息标识
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:int
+}
+type Query {
+    countByExample(example:productAssocExample):Long
+    selectByExample(example:productAssocExample):[productAssoc]
+    selectByPrimaryKey(key:productAssocKey):productAssoc
+}
+
+type Mutation{
+    insert(record:productAssoc): Int
+    insertSelective(record:productAssoc): Int
+    updateByPrimaryKey(record:productAssoc): Int
+    deleteByPrimaryKey(key:productAssocKey):Int
+}
+type productAssocExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}
+type productAssocKey{
+    productId:String
+    productIdTo:String
+    productAssocTypeId:String
+    fromDate:date
+}
