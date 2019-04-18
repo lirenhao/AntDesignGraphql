@@ -1,0 +1,41 @@
+import { string } from 'prop-types';
+
+type  employment  {
+    partyIdFrom:ID!
+    partyIdTo:String
+    roleTypeIdFrom:String  #源角色类型标识
+    roleTypeIdTo:String  #目标角色类型标识
+    fromDate:date #起始日期
+    thruDate:date  #终止日期
+    termination_reason_id:String  #终止原因标识
+    termination_type_id:String #终止类型标识
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    selectByPrimaryKey(key:employmentKey):deliverableType
+    selectByExample(example:employmentExample):[employment]
+    countByExample(example:employmentExample):Long
+}
+    type Mutation{
+        insert(record:employment): Int
+        insertSelective(record:employment): Int
+        updateByPrimaryKey(record:employment): Int
+        deleteByPrimaryKey(key:employmentKey):Int
+    }
+    type deliverableTypeExample{
+        orderByClause:String
+        distinct:Boolean
+        oredCriteria:[Criteria]
+    }
+
+    type employmentKey{
+        partyIdFrom:String!
+        roleTypeIdFrom:String!
+        partyIdTo:String!
+        roleTypeIdTo:String!
+        fromDate:data!
+    }
+}

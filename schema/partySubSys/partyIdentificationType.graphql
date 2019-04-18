@@ -1,0 +1,28 @@
+import { string } from 'prop-types';
+
+type  partyIdentificationType  {
+    partyIdentificationTypeId: ID! #当事人身份标识符类型ID
+    parentIdtTypeId: String #上级标识符类型ID
+    hasTable: Boolean #是否库表
+    partyIdentificationTypeName: String #当事人身份标识符类型名称
+    description: String
+    lastUpdatedStamp: date
+    createdStamp: date
+    version: Int
+}
+type Query {
+    countByExample(example:partyIdentificationTypeExample):Long
+    selectByExample(example:partyIdentificationTypeExample):[partyIdentificationType]
+    selectByPrimaryKey(partyIdentificationTypeId:String):partyIdentificationType
+}
+type Mutation{
+    insert(record:partyIdentificationType): Int
+    insertSelective(record:partyIdentificationType): Int
+    updateByPrimaryKey(record:partyIdentificationType): Int
+    deleteByPrimaryKey(partyIdentificationTypeId:String):Int
+}
+type partyIdentificationTypeExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}

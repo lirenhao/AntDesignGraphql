@@ -1,0 +1,29 @@
+import { string } from 'prop-types';
+
+type  deliverable  {
+    deliverable_id:ID!
+    deliverableTypeId:String #可交付成果类型标识
+    deliverableName:String #可交付成果名称
+    description:String
+    isDeletedTag:Boolean
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+    type Query {
+        selectByPrimaryKey(deliverableId:ID!):deliverable
+        selectByExample(example:deliverableExample):[deliverable]
+        countByExample(example:deliverableExample):Long
+}
+    type Mutation{
+        insert(record:deliverable): Int
+        insertSelective(record:deliverable): Int
+        updateByPrimaryKey(record:deliverable): Int
+        deleteByPrimaryKey(deliverableId:String):Int
+    }
+    type deliverableExample{
+        orderByClause:String
+        distinct:Boolean
+        oredCriteria:[Criteria]
+    }

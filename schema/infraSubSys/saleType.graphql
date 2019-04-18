@@ -1,0 +1,28 @@
+import { string } from 'prop-types';
+
+type  saleType  {
+    saleTypeId:ID! #销售类型标识
+    parentTypeId:String
+    saleTypeName:String
+    description:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    countByExample(example:saleTypeExample):Long
+    selectByPrimaryKey(saleTypeId:String):saleType
+    selectByExample(example:saleTypeExample):[saleType]
+}
+
+type Mutation{
+    insert(record:saleType):Int
+    insertSelective(record:saleType): Int
+    updateByPrimaryKey(record:saleType): Int
+    deleteByPrimaryKey(saleTypeId:String):Int
+}
+type saleTypeExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

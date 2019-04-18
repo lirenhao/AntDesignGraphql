@@ -1,0 +1,34 @@
+import { string } from 'prop-types';
+
+type  productPriceComponentExtend  {
+    productPriceComponentId:ID!
+    productFeatureId:String
+    sequenceNum:Int
+    description:String
+    changedByUserLogin:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    countByExample(example:productPriceComponentExtendExample):Long
+    selectByExample(example:productPriceComponentExtendExample):[productPriceComponentExtend]
+    selectByPrimaryKey(key:productPriceComponentExtendKey):productPriceComponentExtend
+}
+
+type Mutation{
+    insert(record:productPriceComponentExtend): Int
+    insertSelective(record:productPriceComponentExtend): Int
+    updateByPrimaryKey(record:productPriceComponentExtend): Int
+    deleteByPrimaryKey(key:productPriceComponentExtendKey):Int
+}
+type productPriceComponentExtendExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}
+type productPriceComponentExtendKey{
+    productPriceComponentId:String
+    productFeatureId:String
+
+}

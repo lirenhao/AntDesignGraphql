@@ -1,0 +1,32 @@
+import { string } from 'prop-types';
+
+type  partyRole  {
+    partyId :ID! #当事人标识
+    roleTypeId :String #角色类型标识
+    isDeletedTag:Boolean #是否被标记为删除标记
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    countByExample(example:partyRoleExample):Long
+    selectByExample(example:partyRoleExample):[partyRole]
+    selectByPrimaryKey(key:partyRoleKey):partyRole
+}
+
+type Mutation{
+    insert(record:partyRole): Int
+    insertSelective(record:partyRole): Int
+    updateByPrimaryKey(record:partyRole): Int
+    deleteByPrimaryKey(key:partyRoleKey):Int
+}
+type partyRoleExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}
+type partyRoleKey{
+    partyId:String
+    roleTypeId:String
+
+}

@@ -1,0 +1,28 @@
+import { string } from 'prop-types';
+
+type  productPricePurpose  {
+    productPricePurposeId:ID! #产品价格目的标识
+    productPricePurposeName:String
+    description:String #描述
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:productPricePurposeExample):Long
+    selectByExample(example:productPricePurposeExample):[productPricePurpose]
+    selectByPrimaryKey(productPricePurposeId:String):productPricePurpose
+}
+
+type Mutation{
+    insert(record:productPricePurpose): Int
+    insertSelective(record:productPricePurpose): Int
+    updateByPrimaryKey(record:productPricePurpose): Int
+    deleteByPrimaryKey(productPricePurposeId:String):Int
+}
+type productPricePurposeExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}

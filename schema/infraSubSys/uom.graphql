@@ -1,0 +1,30 @@
+import { string } from 'prop-types';
+
+type  uom  {
+    uomId:ID! #UOM标识
+    uomTypeId:String   #UOM类型标识
+    uomName:String
+    abbreviation:String #缩写
+    description:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:uomExample):Long
+    selectByPrimaryKey(uomId:String):uom
+    selectByExample(example:uomExample):[uom]
+}
+
+type Mutation{
+    insert(record:uom):Int
+    insertSelective(record:uom): Int
+    updateByPrimaryKey(record:uom): Int
+    deleteByPrimaryKey(uomId:String):Int
+}
+type uomExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

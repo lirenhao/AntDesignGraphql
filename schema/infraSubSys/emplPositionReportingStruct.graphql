@@ -1,0 +1,34 @@
+import { string } from 'prop-types';
+
+type  emplPositionReportingStruct  {
+    emplPositionIdReportingTo:ID!
+    emplPositionIdManagedBy:String
+    fromDate:date
+    thruDate:date
+    comments:String
+    primaryFlag:Boolean #主标识
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+     selectByPrimaryKey(key:emplPositionReportingStructKey):emplPosition
+    selectByExample(example:emplPositionReportingStructExample):[emplPosition]
+    countByExample(example:emplPositionReportingStructExample):Long
+}
+    type Mutation{
+        insert(record:emplPositionReportingStruct): Int
+        insertSelective(record:emplPositionReportingStruct): Int
+        updateByPrimaryKey(record:emplPositionFulfillment): Int
+        deleteByPrimaryKey(key:emplPositionReportingStructKey):Int
+    }
+    type emplPositionReportingStructExample{
+        orderByClause:String
+        distinct:boolean
+        oredCriteria:[Criteria]
+    }
+    type emplPositionReportingStructKey{
+        emplPositionIdReportingTo:String
+        emplPositionIdManagedBy:String
+        fromDate:date
+    }

@@ -1,11 +1,35 @@
-type party {
-  partyId:ID!
-  partyTypeId:String
-  defaultPartyIdentificationTypeId,String
-  extennalId:String
-  preferredCurrencyUomId:String
-  statusId:String
-  description:String
-  dataSourceId:String
+import { string } from 'prop-types';
 
+type  party  {
+  partyId: ID! #当事人标识
+  partyTypeId: String #当事人类型标识
+  defaultPartyIdentificationTypeId: String
+  externalId: String #外部标识
+  preferredCurrencyU: String #优先使用币种
+  description: String #描述
+  statusId: String #状态标识
+  createdStamp: date #数据库记录创建时间
+  createdByUserLogin: String #创建的用户登录标识
+  lastUpdatedStamp: date #数据库记录最后更新时间
+  lastModifiedByUserLogin: String #最后修改的用户登录标识
+  dataSourceId: String #数据源标识
+  isDeletedTag: Boolean #是否删除标记
+  version: Int
+}
+
+type Query {
+  countByExample(example:partyExample):Long
+  selectByExample(example:partyExample):[party]
+  selectByPrimaryKey(partyId:String):party
+}
+type Mutation{
+  insert(record:party): Int
+  insertSelective(record:party): Int
+  updateByPrimaryKey(record:party): Int
+  deleteByPrimaryKey(partyId:String):Int
+}
+type partyExample{
+  orderByClause:String
+  distinct:Boolean
+  oredCriteria:[Criteria]
 }

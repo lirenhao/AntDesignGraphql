@@ -1,12 +1,30 @@
-import { getNormalizedTypescriptVersion } from 'tslint/lib/verify/parse';
+import { string } from 'prop-types';
 
-type partyType {
-    partyTypeId:ID!
+type  partyType  {
+  partyTypeId :ID! #当事人类型标识
+  parentTypeId :String #上级类型标识
   partyTypeName:String
-  parentTypeId:String
-  hasTable:Boolean
+  hasTable:Boolean #有库表否
   description:String
-  lastUpdatedStamp:Date
-  createdStamp:Date
+  lastUpdatedStamp:date
+  createdStamp:date
+  isDeletedTag:Boolean
   version:Int
+}
+type Query {
+  countByExample(example:partyTypeExample):Long
+  selectByExample(example:partyTypeExample):[partyType]
+  selectByPrimaryKey(partyTypeId:String):partyType
+}
+
+type Mutation{
+  insert(record:partyType): Int
+  insertSelective(record:partyType): Int
+  updateByPrimaryKey(record:partyType): Int
+  deleteByPrimaryKey(partyTypeId:String):Int
+}
+type partyTypeExample{
+  orderByClause:String
+  distinct:Boolean
+  oredCriteria:[Criteria]
 }

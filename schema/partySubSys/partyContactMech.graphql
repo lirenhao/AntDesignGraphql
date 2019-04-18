@@ -1,0 +1,40 @@
+import { string } from 'prop-types';
+
+type  partyContactMech  {
+    partyId: ID! #当事人标识
+    contactMechId: String #联系机制标识
+    THRUDATE: date #起始日期
+    FROMDATE: date #终止日期
+    roleTypeId: String #角色类型标识
+    allowSolicitation: Boolean #允许推销否
+    extension: string #扩展
+    verified: Boolean #验证否
+    comments: String #备注
+    yearsWithContactMech: Float
+    monthsWithContactMech: Float
+    lastUpdatedStamp: date
+    createdStamp: date
+    version: Int
+}
+
+type Query {
+    countByExample(example:partyContactMechExample):Long
+    selectByExample(example:partyContactMechExample):[partyContactMech]
+    selectByPrimaryKey(key:partyContactMechKey):partyContactMech
+}
+type Mutation{
+    insert(record:partyContactMech): Int
+    insertSelective(record:partyContactMech): Int
+    updateByPrimaryKey(record:partyContactMech): Int
+    deleteByPrimaryKey(key:partyContactMechKey):Int
+}
+type partyContactMechExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}
+type partyContactMechKey{
+    partyId:String
+    contactMechId:String
+    fromDate:date
+}

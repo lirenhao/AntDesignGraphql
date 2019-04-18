@@ -1,0 +1,35 @@
+import { string } from 'prop-types';
+
+type  productCategory  {
+    productCategoryId:ID! #产品类别标识
+    productCategoryTypeId:String #产品类别类型标识
+    primaryParentCategoryId:String #主要上级类别
+    categoryName:String #类别名称
+    description:Boolean #简要描述
+    longDescription:String #详细描述
+    categoryImageUrl:String #类别图像地址
+    linkOneImageUrl:String #按钮图像地址
+    linkTwoImageUrl:String #按钮两个图像地址
+    detailScreen:String #详细屏幕
+    showInSelect:Boolean
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    countByExample(example:productCategoryExample):Long
+    selectByExample(example:productCategoryExample):[productCategory]
+    selectByPrimaryKey(productCategoryId:String):productCategory
+}
+
+type Mutation{
+    insert(record:productCategory): Int
+    insertSelective(record:productCategory): Int
+    updateByPrimaryKey(record:productCategory): Int
+    deleteByPrimaryKey(productCategoryId:String):Int
+}
+type productCategoryExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}

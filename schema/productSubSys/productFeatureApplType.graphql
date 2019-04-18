@@ -1,0 +1,30 @@
+import { string } from 'prop-types';
+
+type  productFeatureApplType  {
+    productFeatureApplTypeId:ID! #产品特征适用性类型标识
+    parentTypeId:String #上级类型标识
+    productFeatureApplTypeName:String
+    hasTable:Boolean #有库表否
+    decription:String #描述
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:productFeatureApplTypeExample):Long
+    selectByExample(example:productFeatureApplTypeExample):[productFeatureApplType]
+    selectByPrimaryKey(productFeatureApplTypeId:String):productFeatureApplType
+}
+
+type Mutation{
+    insert(record:productFeatureApplType): Int
+    insertSelective(record:productFeatureApplType): Int
+    updateByPrimaryKey(record:productFeatureApplType): Int
+    deleteByPrimaryKey(productFeatureApplTypeId:String):Int
+}
+type productFeatureApplTypeExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}

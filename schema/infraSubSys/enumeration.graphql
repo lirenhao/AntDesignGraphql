@@ -1,0 +1,31 @@
+import { string } from 'prop-types';
+
+type  enumeration  {
+    enumId:ID!
+    enumType_id:String #枚举类型标识
+    enumCode:String #枚举类型标识
+    enumName:String
+    sequenceId:String #序号
+    description:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+    type Query {
+        countByExample(example:enumerationExample):Long
+        selectByPrimaryKey(enumId:String):enumeration
+        selectByExample(example:enumerationExample):[enumeration]
+    }
+
+
+    type Mutation{
+        insert(record:enumeration): Int
+        insertSelective(record:enumeration): Int
+        updateByPrimaryKey(record:enumeration): Int
+        deleteByPrimaryKey(enumId:String):Int
+    }
+    type enumerationExample{
+        orderByClause:String
+        distinct:boolean
+        oredCriteria:[Criteria]
+    }

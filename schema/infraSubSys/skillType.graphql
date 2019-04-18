@@ -1,0 +1,29 @@
+import { string } from 'prop-types';
+
+type  skillType  {
+    skillTypeId:ID! #技能类型标
+    parentTypeId:String #上级类型标识
+    skillTypeName:String
+    hasTable:Boolean #有库表否
+    description:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    countByExample(example:skillTypeExample):Long
+    selectByPrimaryKey(skillTypeId:String):skillType
+    selectByExample(example:skillTypeExample):[skillType]
+}
+
+type Mutation{
+    insert(record:skillType):Int
+    insertSelective(record:skillType): Int
+    updateByPrimaryKey(record:skillType): Int
+    deleteByPrimaryKey(skillTypeId:String):Int
+}
+type skillTypeExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

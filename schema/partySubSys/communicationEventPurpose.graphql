@@ -1,0 +1,32 @@
+import { string } from 'prop-types';
+
+type  communicationEventPurpose  {
+    communicationEventPrpTypId: ID! #通信事件目的类型标识
+    communicationEventId: String #通信事件标识
+    description: String #描述
+    lastUpdatedStamp: date
+    createdStamp: date
+    version: Int
+}
+type Query {
+    countByExample(example:communicationEventPurposeExample):Long
+    selectByExample(example:communicationEventPurposeExample):[communicationEventPurpose]
+    selectByPrimaryKey(key:communicationEventPurposeKey):communicationEventPurpose
+}
+type Mutation{
+    insert(record:communicationEventPurpose): Int
+    insertSelective(record:communicationEventPurpose): Int
+    updateByPrimaryKey(record:communicationEventPurpose): Int
+    deleteByPrimaryKey(key:communicationEventPurposeKey):Int
+}
+type communicationEventPurposeExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}
+
+type communicationEventPurposeKey {
+    communicationEventPrpTypId:String!
+    communicationEventId:String!
+
+}

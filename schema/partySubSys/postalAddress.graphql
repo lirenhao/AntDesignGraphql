@@ -1,0 +1,43 @@
+import { string } from 'prop-types';
+
+type  postalAddress  {
+    contactMechId:ID! #联系机制标识
+    toName:String #目标名称
+    attnName:String #附加名称
+    address1:String #中文地址
+    address2:String #英文地址
+    houseNumber:Float #楼号
+    houseNumberExt:String #楼号扩展
+    directions:String #方位
+    city:String #城市
+    cityGeoId:String #城市地理标识
+    postalCode:String #邮编
+    postalCodeExt:String #邮编扩展
+    countryGeoId:String #国家地理标识
+    stateProvinceGeoId:String #省地理标识
+    countyGeoId:String #县地理标识
+    municipalityGeoId:String
+    postalCodeGeoId:String #邮编地理标识_所属地区
+    geoPointId:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:postalAddressExample):Long
+    selectByExample(example:postalAddressExample):[postalAddress]
+    selectByPrimaryKey(contactMechId:String):postalAddress
+}
+
+type Mutation{
+    insert(record:postalAddress): Int
+    insertSelective(record:postalAddress): Int
+    updateByPrimaryKey(record:postalAddress): Int
+    deleteByPrimaryKey(contactMechId:String):Int
+}
+type postalAddressExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}

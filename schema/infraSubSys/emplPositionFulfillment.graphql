@@ -1,0 +1,32 @@
+import { string } from 'prop-types';
+
+type  emplPositionFulfillment  {
+    emplPositionId:ID! #机构职位标识
+    partyId:String  #履行该职位的当事人标识
+    fromDate:date
+    thruDate:date
+    comments:String
+    lastUpdatedStamp:date
+    createdStamp:date
+}
+type Query {
+    selectByPrimaryKey(key:emplPositionFulfillmentKey):emplPositionFulfillment
+    selectByExample(example:emplPositionFulfillmentExample):[emplPositionFulfillment]
+    countByExample(example:emplPositionFulfillmentExample):Long
+}
+    type Mutation{
+        insert(record:emplPositionFulfillment): Int
+        insertSelective(record:emplPositionFulfillment): Int
+        updateByPrimaryKey(record:emplPositionFulfillment): Int
+        deleteByPrimaryKey(key:emplPositionFulfillmentKey):Int
+    }
+    type emplPositionFulfillmentExample{
+        orderByClause:String
+        distinct:boolean
+        oredCriteria:[Criteria]
+    }
+    type emplPositionFulfillmentKey{
+        emplPositionId:String!
+        partyId:String!
+        fromDate:date!
+    }

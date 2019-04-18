@@ -1,0 +1,37 @@
+import { string } from 'prop-types';
+
+type  productCategoryMember  {
+    productCategoryId:ID! #产品类别标识
+    productId:String #产品标识
+    fromDate:date #起始日期
+    thruDate:date #终止日期
+    comments:String #注释
+    sequenceNum:Float #序号数字
+    quantity:Float #数量
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:productCategoryMemberExample):Long
+    selectByExample(example:productCategoryMemberExample):[productCategoryMember]
+    selectByPrimaryKey(key:productCategoryMemberKey):productCategoryMember
+}
+
+type Mutation{
+    insert(record:productCategoryMember): Int
+    insertSelective(record:productCategoryMember): Int
+    updateByPrimaryKey(record:productCategoryMember): Int
+    deleteByPrimaryKey(key:productCategoryMemberKey):Int
+}
+type productCategoryMemberExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}
+type productCategoryMemberKey{
+    productCategoryId:String
+    productId:String
+    fromDate:date
+}

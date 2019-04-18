@@ -1,0 +1,28 @@
+import { string } from 'prop-types';
+
+type  dataSourceType {
+    dataSourceTypeId:ID!
+    parentSourceTypeId:String #上级数据来源类型标识
+    dataSourceTypeName:String
+    description:String
+    isDeletedTag:Boolean
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    selectByPrimaryKey(dataSourceTypeId:ID!):dataSourceType
+    selectByExample(example:dataSourceTypeExample):[dataSourceType]
+    countByExample(example:dataSourceTypeExample):Long
+}
+    type Mutation{
+        insert(record:dataSourceType): Int
+        insertSelective(record:dataSourceType): Int
+        updateByPrimaryKey(record:dataSourceType): Int
+        deleteByPrimaryKey(dataSourceTypeId:String):Int
+    }
+    type dataSourceTypeExample{
+        orderByClause:String
+        distinct:Boolean
+        oredCriteria:[Criteria]
+    }

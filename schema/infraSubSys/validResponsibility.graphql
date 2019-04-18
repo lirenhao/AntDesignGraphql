@@ -1,0 +1,35 @@
+import { string } from 'prop-types';
+
+type  validResponsibility  {
+    emplPositionTypeId:ID!  #职位类型
+    responsibilityTypeId:String  #职位类型标识
+    fromDate:date #开始时间
+    thruDate:date #结束时间
+    comments:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    countByExample(example:validResponsibilityExample):Long
+    selectByPrimaryKey(key:validResponsibilityKey):validResponsibility
+    selectByExample(example:validResponsibilityExample):[validResponsibility]
+}
+
+type Mutation{
+    insert(record:validResponsibility):Int
+    insertSelective(record:validResponsibility): Int
+    updateByPrimaryKey(record:validResponsibility): Int
+    deleteByPrimaryKey(key:validResponsibilityKey):Int
+}
+type validResponsibilityExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}
+
+type validResponsibilityKey{
+    emplPositionTypeId:String!
+    responsibilityTypeId:String!
+    fromDate:date!
+}

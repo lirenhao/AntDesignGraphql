@@ -1,0 +1,34 @@
+import { string } from 'prop-types';
+
+type  emplPositionResponsibility  {
+    emplPositionId:ID! #机构职位标识
+    responsibilityTypeId:String #职责类型标识
+    fromDate:date
+    thruDate:date
+    comments:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    selectByPrimaryKey(key:emplPositionResponsibilityKey):emplPositionResponsibility
+    selectByExample(example:emplPositionResponsibilityExample):[emplPositionResponsibility]
+    countByExample(example:emplPositionResponsibilityExample):Long
+}
+    type Mutation{
+        insert(record:emplPositionResponsibility): Int
+        insertSelective(record:emplPositionResponsibility): Int
+        updateByPrimaryKey(record:emplPositionResponsibility): Int
+       deleteByPrimaryKey(key:emplPositionResponsibilityKey):Int
+    }
+    type emplPositionResponsibilityExample{
+        orderByClause:String
+        distinct:boolean
+        oredCriteria:[Criteria]
+    }
+    type emplPositionResponsibilityKey {
+        emplPositionId:String!
+        responsibilityTypeId:String!
+        fromDate:date!
+    }
+}

@@ -1,0 +1,33 @@
+import { string } from 'prop-types';
+
+type  communicationEventRole  {
+    communicationEventId: ID! #通信事件标识
+    partyId: String #当事人
+    roleTypeId: String #角色类型
+    contactMechId: String #联系机制标识
+    statusId: String #状态标识
+    lastUpdatedStamp: date
+    createdStamp: date
+    version: Int
+}
+type Query {
+    countByExample(example:communicationEventRoleExample):Long
+    selectByExample(example:communicationEventRoleExample):[communicationEventRole]
+    selectByPrimaryKey(key:communicationEventRoleKey):communicationEventRole
+}
+type Mutation{
+    insert(record:communicationEventRole): Int
+    insertSelective(record:communicationEventRole): Int
+    updateByPrimaryKey(record:communicationEventRole): Int
+    deleteByPrimaryKey(key:communicationEventRoleKey):Int
+}
+type communicationEventRoleExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}
+type communicationEventRoleKey{
+    communicationEventId:String
+    partyId:String
+    roleTypeId:String
+}

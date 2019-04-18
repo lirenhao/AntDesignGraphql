@@ -1,0 +1,31 @@
+import { string } from 'prop-types';
+
+type  partyRelationshipType  {
+    partyRelationshipTypeId :ID! #当事人关系类型标识
+    parentTypeId :String #上级类型
+    hasTable:Boolean #有库表否
+    partyRelationshipName :String #当事人关系类型名称
+    description :String #描述
+    roleTypeIdValidFrom :String #有效的源角色类型标识
+    roleTypeIdValidTo :String #有效的目的角色类型标识
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    countByExample(example:partyRelationshipTypeExample):Long
+    selectByExample(example:partyRelationshipTypeExample):[partyRelationshipType]
+    selectByPrimaryKey(partyRelationshipTypeId:String):partyRelationshipType
+}
+
+type Mutation{
+    insert(record:partyRelationshipType): Int
+    insertSelective(record:partyRelationshipType): Int
+    updateByPrimaryKey(record:partyRelationshipType): Int
+    deleteByPrimaryKey(partyRelationshipTypeId:String):Int
+}
+type partyRelationshipTypeExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}

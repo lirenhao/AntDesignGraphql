@@ -1,0 +1,33 @@
+import { string } from 'prop-types';
+
+type  geo  {
+    geoId:ID!
+    geoTypeId:String
+    geoName:String
+    geoCode:String
+    geoSecCode:String
+    abbreviation:String #缩写
+    wellKnownText:Boolean
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:geoExample):Long
+    selectByPrimaryKey(geoId:String):enumerationType
+    selectByExample(example:geoExample):[enumerationType]
+}
+
+
+type Mutation{
+    insert(record:geo): Int
+    insertSelective(record:geo): Int
+    updateByPrimaryKey(record:geo): Int
+    deleteByPrimaryKey(geoId:String):Int
+}
+type geoExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

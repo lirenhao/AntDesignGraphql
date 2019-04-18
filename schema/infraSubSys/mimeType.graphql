@@ -1,0 +1,28 @@
+import { string } from 'prop-types';
+
+type  mimeType  {
+    mimeTypeId:ID!   #多媒体类型
+    mimeTypeName:String
+    description:Boolean
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:mimeTypeExample):Long
+    selectByPrimaryKey(mimeTypeId:String):geoType
+    selectByExample(example:mimeTypeExample):[geoType]
+}
+
+type Mutation{
+    insert(record:mimeType): Int
+    insertSelective(record:mimeType): Int
+    updateByPrimaryKey(record:mimeType): Int
+    deleteByPrimaryKey(mimeTypeId:String):Int
+}
+type mimeTypeExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

@@ -1,0 +1,27 @@
+import { string } from 'prop-types';
+
+type  contactMechPurposeType  {
+    contactMechPurposeTypeId: ID! #联系机制用途类型标识
+    name: String
+    description: String #描述
+    lastUpdatedStamp: date
+    createdStamp: date
+    version: Int
+}
+
+type Query {
+    countByExample(example:contactMechPurposeTypeExample):Long
+    selectByExample(example:contactMechPurposeTypeExample):[contactMechPurposeType]
+    selectByPrimaryKey(contactMechPurposeTypeId:String):contactMechPurposeType
+}
+type Mutation{
+    insert(record:contactMechPurposeType): Int
+    insertSelective(record:contactMechPurposeType): Int
+    updateByPrimaryKey(record:contactMechPurposeType): Int
+    deleteByPrimaryKey(contactMechPurposeTypeId:String):Int
+}
+type contactMechPurposeTypeExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}

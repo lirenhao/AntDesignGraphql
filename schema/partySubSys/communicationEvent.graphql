@@ -1,0 +1,50 @@
+import { string } from 'prop-types';
+
+type  communicationEvent  {
+        communicationEventId: ID! #通信事件标识
+        communicationEventTypeId: String #通信事件类型标识
+        origCommEventId: String #事件链条根节点通讯事件标识
+        parentCommEventId: String #上级通讯事件标识
+        statusId: String #状态标识
+        contactMechTypeId: String #联机机制类型标识
+        contactMechIdFrom: String #联系机制源标识
+        contactMechIdTo: String #联系机制目标标识
+        roleTypeIdFrom: String #角色类型源标识
+        roleTypeIdTo: String #角色类型目标标识
+        partyIdFrom: String #当事人源标识
+        partyIdTo: String #当事人目标标识
+        entryDate: date #对通信事件内容做记录的时间
+        datetimeStarted: date #通信事件开始时间
+        datetimeEnded: date #通信事件结束时间
+        subject: String #通信事件主题
+        contentMimeTypeId: String #通信事件内容多媒体类型标识
+        content: String #通信事件内容
+        note: String #通信事件内容便笺
+        reasonEnumId: String
+        contactListId: String
+        headerString: String
+        fromString: String
+        toString: String
+        ccString: String
+        bccString: String
+        messageId: String
+        lastUpdatedStamp: date
+        createdStamp: date
+        version: Int
+}
+type Query {
+        countByExample(example:communicationEventExample):Long
+        selectByExample(example:communicationEventExample):[communicationEvent]
+        selectByPrimaryKey(communicationEventId:ID!):communicationEvent
+}
+type Mutation{
+        insert(record:communicationEvent): Int
+        insertSelective(record:communicationEvent): Int
+        updateByPrimaryKey(record:communicationEvent): Int
+        deleteByPrimaryKey(communicationEventId:String):Int
+}
+type communicationEventExample{
+        orderByClause:String
+        distinct:Boolean
+        oredCriteria:[Criteria]
+}

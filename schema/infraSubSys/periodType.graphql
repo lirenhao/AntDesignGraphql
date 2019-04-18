@@ -1,0 +1,31 @@
+ import { string } from 'prop-types';
+
+type  periodType  {
+    periodTypeId:ID!
+    periodTypeName:String
+    description:String
+    periodLength:date
+    uomId:String
+    isDeletedTag:Boolean
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+ type Query {
+     countByExample(example:periodTypeExample):Long
+     selectByPrimaryKey(periodTypeId:String):periodType
+     selectByExample(example:periodTypeExample):[periodType]
+ }
+
+ type Mutation{
+     insert(record:periodType): Int
+     insertSelective(record:periodType): Int
+     updateByPrimaryKey(record:periodType): Int
+     deleteByPrimaryKey(periodTypeId:String):Int
+ }
+ type periodTypeExample{
+     orderByClause:String
+     distinct:boolean
+     oredCriteria:[Criteria]
+ }

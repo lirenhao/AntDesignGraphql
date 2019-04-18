@@ -1,0 +1,43 @@
+import { string } from 'prop-types';
+
+type  rateAmount  {
+    rateTypeId:ID!
+    rateCurrencyUomId:String #数量超出类型标识
+    periodTypeId:String #工作周期标记
+    workEffortId:String #工作计划标识
+    partyId:String #当事人标识
+    emplPositionTypeId:String #机构职位类型标识
+    fromDate:date #起始日期
+    thruDate:date #终止日期
+    rateAmount:Float
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:rateAmountExample):Long
+    selectByPrimaryKey(key:rateAmountKey):rateAmount
+    selectByExample(example:rateAmountExample):[rateAmount]
+}
+
+type Mutation{
+    insert(record:rateAmount): Int
+    insertSelective(record:rateAmount): Int
+    updateByPrimaryKey(record:rateAmount): Int
+    deleteByPrimaryKey(key:rateAmountKey):Int
+}
+type rateAmountExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}
+type rateAmountKey {
+    rateTypeId:String
+    rateCurrencyUomId:String
+    periodTypeId:String
+    workEffortId:String
+    partyId:String
+    emplPositionTypeId:String
+    fromDate:date
+}

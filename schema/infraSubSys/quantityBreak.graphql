@@ -1,0 +1,31 @@
+import { string } from 'prop-types';
+
+type  quantityBreak  {
+    quantityBreakId:ID! #数量超出标识
+    quantityBreakTypeId:String #数量超出类型标识
+    fromQuantity:String #开始数量
+    thruQuantity:String #结束数量
+    uomId:String
+    description:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:quantityBreakExample):Long
+    selectByPrimaryKey(quantityBreakId:String):quantityBreak
+    selectByExample(example:quantityBreakExample):[quantityBreak]
+}
+
+type Mutation{
+    insert(record:quantityBreak): Int
+    insertSelective(record:quantityBreak): Int
+    updateByPrimaryKey(record:quantityBreak): Int
+    deleteByPrimaryKey(quantityBreakId:String):Int
+}
+type quantityBreakExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

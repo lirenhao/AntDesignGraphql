@@ -1,0 +1,28 @@
+import { string } from 'prop-types';
+
+type  rateType  {
+    rateTypeId:ID!
+    rateTypeName:String
+    description:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:rateTypeExample):Long
+    selectByPrimaryKey(rateTypeId:String):rateType
+    selectByExample(example:rateTypeExample):[rateType]
+}
+
+type Mutation{
+    insert(record:rateType): Int
+    insertSelective(record:rateType): Int
+    updateByPrimaryKey(record:rateType): Int
+    deleteByPrimaryKey(rateTypeId:String):Int
+}
+type rateTypeExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

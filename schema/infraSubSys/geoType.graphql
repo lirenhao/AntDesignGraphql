@@ -1,0 +1,28 @@
+import { string } from 'prop-types';
+
+type  geoType  {
+    geoTypeId:ID!
+    parentTypeId:String #上级类型标识
+    hasTable:Boolean #有库表否
+    description:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    countByExample(example:geoTypeExample):Long
+    selectByPrimaryKey(geoTypeId:String):geoType
+    selectByExample(example:geoTypeExample):[geoType]
+}
+
+type Mutation{
+    insert(record:geoType): Int
+    insertSelective(record:geoType): Int
+    updateByPrimaryKey(record:geoType): Int
+    deleteByPrimaryKey(geoTypeId:String):Int
+}
+type geoTypeExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

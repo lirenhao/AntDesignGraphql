@@ -1,0 +1,38 @@
+import { string } from 'prop-types';
+
+type  emplPosition  {
+    emplPositionId:ID! #机构职位标识
+    emplPositionTypeId:String #职位类型
+    statusId:String #状态标识
+    partyId:String #当事人
+    budgetId:String #预算标识
+    budgetItemSeqId:String #预算项序号
+    estimatedFromDate:date #预计开始时间
+    estimatedThruDate:date #预计结束时间
+    salaryFlag:Boolean #薪资标志
+    exemptFlag:Boolean #免除标志
+    fulltimeFlag:Boolean #全职标志
+    temporaryFlag:Boolean #临时标志
+    actualFromDate:date #实际开始日期
+    actualThruDate:date #实际终止日期
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+    type Query {
+    selectByPrimaryKey(emplPositionId:ID!):emplPosition
+    selectByExample(example:emplPositionExample):[emplPosition]
+    countByExample(example:emplPositionExample):Long
+}
+    type Mutation{
+        insert(record:emplPosition): Int
+        insertSelective(record:emplPosition): Int
+        updateByPrimaryKey(record:emplPosition): Int
+        deleteByPrimaryKey(emplPositionId:String):Int
+    }
+    type emplPositionExample{
+        orderByClause:String
+        distinct:boolean
+        oredCriteria:[Criteria]
+    }
+}

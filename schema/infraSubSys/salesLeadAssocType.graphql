@@ -1,0 +1,29 @@
+import { string } from 'prop-types';
+
+type  salesLeadAssocType  {
+    salesLeadAssocTypeId:ID! #销售线索关联类型标识
+    parentTypeId:String #上级类型标识
+    hasTable:Boolean #有库表否
+    description:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:salesLeadAssocTypeExample):Long
+    selectByPrimaryKey(salesLeadAssocTypeId:String):salesLeadAssocType
+    selectByExample(example:salesLeadAssocTypeExample):[salesLeadAssocType]
+}
+
+type Mutation{
+    insert(record:salesLeadAssocType):Int
+    insertSelective(record:salesLeadAssocType): Int
+    updateByPrimaryKey(record:salesLeadAssocType): Int
+    deleteByPrimaryKey(salesLeadAssocTypeId:String):Int
+}
+type salesLeadAssocTypeExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

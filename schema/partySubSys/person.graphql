@@ -1,0 +1,51 @@
+import { string } from 'prop-types';
+
+type  person  {
+    partyId  :ID! #当事人
+    birthDate :date #出生日期
+    deceasedDate  :date
+    firstName  :String #名
+    middleName  :String #中间名
+    lastName  :String #姓
+    genderTypeId  :String #性别标识
+    defaultPartyIdentificationTypeId  :String #默认标识符类型
+    maritalStatus:Boolean #婚否
+    mothersMaiden  :String #部分地区女性婚前姓
+    personalTitle  :String #头衔
+    nickname  :String #昵称
+    description:String
+    totalYearsWorkExperience:float #总的工作年限
+    employmentStatusEnumId  :String #雇佣状态枚举标识
+    residenceStatusEnumId  :String #居住状态枚举标识
+    occupationClassificationId  :String #职业分类标识
+    occupationTypeId  :String #职业类型标
+    existingCustomer:Boolean #还是公司的客户否
+    comments  :String #备注
+    externalId  :String #外部系统身份标识
+    dataSourceId  :String #数据源标识
+    isUnread:Boolean #是否无人读过
+    lastModifiedByUserLogin  :String #最后更新时的登入者
+    lastUpdatedStamp  :date #数据库记录最后更新时间
+    createdByUserLogin  :String #创建时的登录者
+    createdStamp  :date #数据库记录创建时间
+    isDeletedTag:Boolean #是否被删除标记
+    version: Int
+}
+
+type Query {
+    countByExample(example:personExample):Long
+    selectByExample(example:personExample):[person]
+    selectByPrimaryKey(partyId:String):person
+}
+
+type Mutation{
+    insert(record:person): Int
+    insertSelective(record:person): Int
+    updateByPrimaryKey(record:person): Int
+    deleteByPrimaryKey(partyId:String):Int
+}
+type personExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}

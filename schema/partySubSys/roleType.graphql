@@ -1,12 +1,30 @@
 import { string } from 'prop-types';
 
 type  roleType {
-  roleTypeId:ID!
-    roleTypeName:String!
-    parentTypeId:String
-    hasTable:Boolean
+    roleTypeId:ID! #角色类型标识
+    roleTypeName:String
+    parentTypeId:String  #上级类型
+    hasTable:Boolean #有库表否
     description:String
     lastUpdatedStamp:date
     createdStamp:date
     version:Int
+}
+
+type Query {
+    countByExample(example:roleTypeExample):Long
+    selectByExample(example:roleTypeExample):[roleType]
+    selectByPrimaryKey(roleTypeId:String):roleType
+}
+
+type Mutation{
+    insert(record:roleType): Int
+    insertSelective(record:roleType): Int
+    updateByPrimaryKey(record:roleType): Int
+    deleteByPrimaryKey(roleTypeId:String):Int
+}
+type roleTypeExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
 }

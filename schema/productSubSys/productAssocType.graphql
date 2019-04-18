@@ -1,0 +1,30 @@
+import { string } from 'prop-types';
+
+type  productAssocType  {
+    productAssocTypeId:ID! #产品关联类型标识
+    parentTypeId:String #父类型标识
+    productAssocTypeName:String
+    isTable:Boolean #有表否
+    description:String #简要描述
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:productAssocTypeExample):Long
+    selectByExample(example:productAssocTypeExample):[productAssocType]
+    selectByPrimaryKey(productAssocTypeId:String):productAssocType
+}
+
+type Mutation{
+    insert(record:productAssocType): Int
+    insertSelective(record:productAssocType): Int
+    updateByPrimaryKey(record:productAssocType): Int
+    deleteByPrimaryKey(productAssocTypeId:String):Int
+}
+type productAssocTypeExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}

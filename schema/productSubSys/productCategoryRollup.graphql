@@ -1,0 +1,35 @@
+import { string } from 'prop-types';
+
+type  productCategoryRollup  {
+    productCategoryId:ID! #产品类别标识
+    parentProductCategoryId:String #上级产品类别标识
+    fromDate:date    #起始日期
+    thruDate:date    #终止日期
+    sequenceNum:Float  #序号数字
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:productCategoryRollupExample):Long
+    selectByExample(example:productCategoryRollupExample):[productCategoryRollup]
+    selectByPrimaryKey(key:productCategoryRollupKey):productCategoryRollup
+}
+
+type Mutation{
+    insert(record:productCategoryRollup): Int
+    insertSelective(record:productCategoryRollup): Int
+    updateByPrimaryKey(record:productCategoryRollup): Int
+    deleteByPrimaryKey(key:productCategoryRollupKey):Int
+}
+type productCategoryRollupExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}
+type productCategoryRollupKey{
+    productCategoryId:String
+    parentProductCategoryId:String
+    fromDate:date
+}

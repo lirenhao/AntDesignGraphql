@@ -1,0 +1,33 @@
+import { string } from 'prop-types';
+
+type  geoAssoc  {
+    geoId:ID!
+    geoIdTo:String
+    geoAssocTypeId:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    countByExample(example:geoAssocExample):Long
+    selectByPrimaryKey(key:geoAssocKey):geoAssoc
+    selectByExample(example:geoAssocExample):[geoAssoc]
+}
+
+
+type Mutation{
+    insert(record:geoAssoc): Int
+    insertSelective(record:geoAssoc): Int
+    updateByPrimaryKey(record:geoAssoc): Int
+    deleteByPrimaryKey(key:geoAssocKey):Int
+}
+type geoAssocExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}
+
+type geoAssocKey{
+    geoId:String
+    geoIdTo:String
+}

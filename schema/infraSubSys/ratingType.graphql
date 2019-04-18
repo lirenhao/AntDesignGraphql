@@ -1,0 +1,29 @@
+import { string } from 'prop-types';
+
+type  ratingType  {
+    ratingTypeId:ID! #等级类型标识
+    parentTypeId:String #上级类型标识
+    ratingTypeName:String #登记类型名称
+    description:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:ratingTypeExample):Long
+    selectByPrimaryKey(ratingTypeId:String):ratingType
+    selectByExample(example:ratingTypeExample):[ratingType]
+}
+
+type Mutation{
+    insert(record:ratingType): Int
+    insertSelective(record:ratingType): Int
+    updateByPrimaryKey(record:ratingType): Int
+    deleteByPrimaryKey(ratingTypeId:String):Int
+}
+type ratingTypeExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

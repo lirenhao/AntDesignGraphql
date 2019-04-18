@@ -1,0 +1,30 @@
+import { string } from 'prop-types';
+
+type  statusItem  {
+    statusId:ID! #状态标识
+    statusTypeId:String #状态类型标识
+    statusCode:String #状态编码
+    sequenceId:String #序号
+    description:String
+    isDeletedTag:Boolean
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    countByExample(example:statusItemExample):Long
+    selectByPrimaryKey(statusId:String):statusItem
+    selectByExample(example:statusItemExample):[statusItem]
+}
+
+type Mutation{
+    insert(record:statusItem):Int
+    insertSelective(record:statusItem): Int
+    updateByPrimaryKey(record:statusItem): Int
+    deleteByPrimaryKey(statusId:String):Int
+}
+type statusItemExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

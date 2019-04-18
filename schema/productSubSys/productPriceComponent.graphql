@@ -1,0 +1,44 @@
+import { string } from 'prop-types';
+
+type  productPriceComponent  {
+    priceComponentId:ID! #产品价格组成标识
+    partyId:String #产品是谁的
+    productStoreId:String #产品店铺 可选
+    productId:String  #产品标识
+    partyTypeId:String #针对目标当事人类型标识定价
+    productFeatureId:String #针对目标特征标识定价
+    agreementId:String #针对目标协议/合同标识定价
+    agreementItemSeqId:String #针对目标协议项标识定价
+    productCategoryId:String #针对目标产品类别标识定价
+    uomId:String #针对目标定价的货币标识
+    saleTypeId:String #针对目标销售类型标识定价
+    orderValueId:String #针对目标订购价值标识定价
+    quantityBreakId:String #针对数量超出标识（底和高）定价
+    geoId:String #针对目标区域标识定价
+    fromDate:date #定价何时开始
+    thruDate:date #定价合适结束
+    descript:String
+    price:Float #具体的价格
+    percent:Float #具体的百分比
+    changedByUserLogin:String #修改的用户登录
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+type Query {
+    countByExample(example:productPriceComponentExample):Long
+    selectByExample(example:productPriceComponentExample):[productPriceComponent]
+    selectByPrimaryKey(priceComponentId:String):productPriceComponent
+}
+
+type Mutation{
+    insert(record:productPriceComponent): Int
+    insertSelective(record:productPriceComponent): Int
+    updateByPrimaryKey(record:productPriceComponent): Int
+    deleteByPrimaryKey(priceComponentId:String):Int
+}
+type productPriceComponentExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}

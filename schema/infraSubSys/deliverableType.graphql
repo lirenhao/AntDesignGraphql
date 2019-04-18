@@ -1,0 +1,28 @@
+import { string } from 'prop-types';
+
+type  deliverableType  {
+    deliverableTypeId:ID!
+    deliverableTypeName:String
+    parentTypeId:String
+    description:String
+    isDeletedTag:Boolean
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+    type Query {
+        selectByPrimaryKey(deliverableTypeId:ID!):deliverableType
+        selectByExample(example:deliverableTypeExample):[deliverableType]
+        countByExample(example:deliverableTypeExample):Long
+}
+    type Mutation{
+        insert(record:deliverableType): Int
+        insertSelective(record:deliverableType): Int
+        updateByPrimaryKey(record:deliverableType): Int
+        deleteByPrimaryKey(deliverableTypeId:String):Int
+    }
+    type deliverableTypeExample{
+        orderByClause:String
+        distinct:Boolean
+        oredCriteria:[Criteria]
+    }

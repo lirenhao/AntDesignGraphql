@@ -1,0 +1,34 @@
+import { string } from 'prop-types';
+
+type  postalAddressBoundary  {
+    contactMechId:ID! #联系机制标识
+    geoId:String #地理标识
+    description:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:postalAddressBoundaryExample):Long
+    selectByExample(example:postalAddressBoundaryExample):[postalAddressBoundary]
+    selectByPrimaryKey(key:postalAddressBoundaryKey):postalAddressBoundary
+}
+
+type Mutation{
+    insert(record:postalAddressBoundary): Int
+    insertSelective(record:postalAddressBoundary): Int
+    updateByPrimaryKey(record:postalAddressBoundary): Int
+    deleteByPrimaryKey(key:postalAddressBoundaryKey):Int
+}
+type postalAddressBoundaryExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}
+
+type postalAddressBoundaryKey{
+    contactMechId:String
+    geoId:String
+
+}

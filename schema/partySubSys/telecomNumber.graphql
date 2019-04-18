@@ -1,0 +1,29 @@
+import { string } from 'prop-types';
+
+type  telecomNumber {
+    contactMechId:ID! #联系机制标识
+    areaCode:String #地区代码
+    contactNumber:String #联系号码
+    askForName:String #问候名称
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:telecomNumberExample):Long
+    selectByExample(example:telecomNumberExample):[telecomNumber]
+    selectByPrimaryKey(contactMechId:String):telecomNumber
+}
+
+type Mutation{
+    insert(record:telecomNumber): Int
+    insertSelective(record:telecomNumber): Int
+    updateByPrimaryKey(record:telecomNumber): Int
+    deleteByPrimaryKey(contactMechId:String):Int
+}
+type telecomNumberExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}

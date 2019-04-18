@@ -1,0 +1,29 @@
+import { string } from 'prop-types';
+
+type  salesLeadType  {
+    salesLeadTypeId:ID! #销售线索类型标识
+    parentTypeId:String #上级类型标识
+    salesLeadTypeName:String
+    description:String
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:salesLeadTypeExample):Long
+    selectByPrimaryKey(salesLeadTypeId:String):salesLeadType
+    selectByExample(example:salesLeadTypeExample):[salesLeadType]
+}
+
+type Mutation{
+    insert(record:salesLeadType):Int
+    insertSelective(record:salesLeadType): Int
+    updateByPrimaryKey(record:salesLeadType): Int
+    deleteByPrimaryKey(salesLeadTypeId:String):Int
+}
+type salesLeadTypeExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

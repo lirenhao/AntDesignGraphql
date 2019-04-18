@@ -1,0 +1,35 @@
+import { string } from 'prop-types';
+
+type  partyContactMechPurpose  {
+    partyId: ID! #当事人标识
+    contactMechId: String #联系机制标识
+    contactMechPurposeTypeId: String #联系机制用途类型标识
+    fromDate: date #起始日期
+    thruDate: date #终止日期
+    lastUpdatedStamp: date
+    createdStamp: date
+    version: Int
+}
+
+type Query {
+    countByExample(example:partyContactMechPurposeExample):Long
+    selectByExample(example:partyContactMechPurposeExample):[partyContactMechPurpose]
+    selectByPrimaryKey(key:partyContactMechPurposeKey):partyContactMechPurpose
+}
+type Mutation{
+    insert(record:partyContactMechPurpose): Int
+    insertSelective(record:partyContactMechPurpose): Int
+    updateByPrimaryKey(record:partyContactMechPurpose): Int
+    deleteByPrimaryKey(key:partyContactMechPurposeKey):Int
+}
+type partyContactMechPurposeExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}
+type partyContactMechPurposeKey{
+    partyId:String
+    contactMechId:String
+    contactMechPurposeTypeId:String
+    fromDate:date
+}

@@ -1,0 +1,40 @@
+import { string } from 'prop-types';
+
+type  productFeaturePrice  {
+    productFeatureId:ID! #产品特征标识
+    productPriceTypeId:String #产品价格类型标识
+    currencyUomId:String #货币度量标识
+    fromDate:date #起始日期
+    thruDate:date #终止日期
+    price:Float #价格
+    createdDate:date #创建日期
+    createdByUserLogin:String
+    lastModifiedDate:date #创建者
+    lastModifiedByUserLogin:String #上次修改日期
+    lastUpdatedStamp:date #上次修改者
+    createdStamp:date
+    version:Int
+}
+type Query {
+    countByExample(example:productFeaturePriceExample):Long
+    selectByExample(example:productFeaturePriceExample):[productFeaturePrice]
+    selectByPrimaryKey(key:productFeaturePriceKey):productFeaturePrice
+}
+
+type Mutation{
+    insert(record:productFeaturePrice): Int
+    insertSelective(record:productFeaturePrice): Int
+    updateByPrimaryKey(record:productFeaturePrice): Int
+    deleteByPrimaryKey(key:productFeaturePriceKey):Int
+}
+type productFeaturePriceExample{
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}
+type productFeaturePriceKey{
+    productFeatureId:String
+    productPriceTypeId:String
+    currencyUomId:String
+    fromDate:date
+}

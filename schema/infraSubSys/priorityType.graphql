@@ -1,0 +1,29 @@
+import { string } from 'prop-types';
+
+type  priorityType  {
+    priorityTypeId:ID! #优先类型标识
+    priorityTypeName:String
+    description:String
+    isDeletedTag:Boolean #是否已删除标记
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:priorityTypeExample):Long
+    selectByPrimaryKey(priorityTypeId:String):priorityType
+    selectByExample(example:priorityTypeExample):[priorityType]
+}
+
+type Mutation{
+    insert(record:priorityType): Int
+    insertSelective(record:priorityType): Int
+    updateByPrimaryKey(record:priorityType): Int
+    deleteByPrimaryKey(priorityTypeId:String):Int
+}
+type priorityTypeExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}

@@ -1,0 +1,35 @@
+import { string } from 'prop-types';
+
+type  statusValidChange  {
+    statusIdFrom:ID!  #源状态标识
+    statusIdTo:String   #目标状态标识
+    conditionExpression:String #条件表达式
+    transitionName:String #转换名称
+    lastUpdatedStamp:date
+    createdStamp:date
+    version:Int
+}
+
+type Query {
+    countByExample(example:statusValidChangeExample):Long
+    selectByPrimaryKey(key:statusValidChangeKey):statusValidChange
+    selectByExample(example:statusValidChangeExample):[statusValidChange]
+}
+
+type Mutation{
+    insert(record:statusValidChange):Int
+    insertSelective(record:statusValidChange): Int
+    updateByPrimaryKey(record:statusValidChange): Int
+    deleteByPrimaryKey(key:statusValidChangeKey):Int
+}
+type statusValidChangeExample{
+    orderByClause:String
+    distinct:boolean
+    oredCriteria:[Criteria]
+}
+
+type statusValidChangeKey {
+    statusIdFrom:String!
+    statusIdTo:String!
+
+}
