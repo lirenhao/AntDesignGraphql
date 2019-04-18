@@ -100,3 +100,19 @@ type Query {
   productFeatureApplType: [ProductFeatureApplType]
   productFeatureAppl(productId: String productFeatureId: String): [ProductFeatureAppl]
 }
+
+input InputProductCategoryMember {
+  productCategoryId: String
+  productId: String
+  fromDate: String
+  thruDate: String
+  comments: String
+  sequenceNum: String
+  quantity: Int
+}
+
+type Mutation {
+  saveProductCategoryMember(input: InputProductCategoryMember): ProductCategoryMember
+  editProductCategoryMember(input: InputProductCategoryMember): ProductCategoryMember
+  removeProductCategoryMember(id: String)
+}

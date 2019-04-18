@@ -1,93 +1,101 @@
-import { string } from 'prop-types';
+# import ProductCategory from 'productCategory.graphql'
 
-type  product  {
-        productId:ID！
-        productTypeId:String #(32) not 产品类型标识
-        primaryProductCategoryId:String #(32) 主要产品类型标识
-        manufacturerPartyId:String #(32) 生成制造商标识
-        facilityId:String #(32) 设施标识
-        introductionDate:date # 引入日期
-        releaseDate:date #  发布日期
-        supportDiscontinuationDate:date #l支持结束日期
-        salesDiscontinuationDate:date #销售终止日期
-        salesDiscWhenNotAvail:Boolean # 缺货时销售有折扣否
-        internalName:String #(255) not 内部名称
-        comments:String #(200) 备注
-        productName:String #(255) 产品名称
-        description:String #(255) 简要描述
-        longDescription :String # mediumtext 详细描述
-        priceDetailText:String #(255) 价格描述文本
-        smallImageUrl:String #(255) 小图
-        mediumImageUrl:String #(255) 中图
-        largeImageUrl:String #(255) 大图
-        detailImageUrl:String #(255) 明细图
-        originalImageUrl:String #(255) 原始图
-        detailScreen:String #(255) 明细的屏幕
-        inventoryMessage:String #(255) 库存信息
-        inventoryItemTypeId:String #(32) 库存项明细类型标识
-        requireInventory:Boolean # 需要库存否
-        quantityUomId:String #(32) 数量度量单位标识
-        quantityIncluded:Float # 已包含的数量
-        piecesIncluded:Float # 包含的部件数
-        requireAmount:Boolean # 需要金额否
-        fixedAmount:Float # 固定面额（金额）
-        amountUomTypeId:String #(32) 金额单位类型
-        weightUomId:String #(32) 重量度量单位标识
-        shippingWeight:Float # 货运重量
-        productWeight:Float # 产品重量
-        heightUomId:String #(32) 高度度量单位标识
-        productHeight:Float # 产品高度
-        shippingHeight:Float # 货运高度
-        widthUomId:String #(32) 宽度度量单位标识
-        productWidth:Float # 产品宽度
-        shippingWidth:Float # 货运宽度
-        depthUomId:String #(32) 深度长度度量单位标识
-        productDepth:Float # 产品深度长度
-        shippingDepth:Float # 货运深度长度
-        diameterUomId:String #(32) 直径度量单位标识
-        productDiameter:Float # 产品直径
-        productRating:Float # 产品评级
-        ratingTypeEnum:String #(32) 评级类型枚举评级类型
-        returnable:Boolean # 是否可退货
-        taxable:Boolean # 征税否
-        chargeShipping:Boolean # 收运费否
-        autoCreateKeywords:Boolean # 自动创建关键字否
-        includeInPromotions:Boolean # 包含在促销中否
-        isVirtual:Boolean # 是否为虚拟产品
-        isVariant:Boolean # 是否为变形产品
-        virtualVariantMethodEnum:String #(32) 虚拟的多样变形方法
-        originGeoId:String #(32) 原=地址位置
-        requirementMethodEnumId:String #(32) 需求方法枚举标识
-        billOfMaterialLevel:String #(32) 物料清单级别
-        reservMaxPersons:Float # 用于租赁的最大人数
-        reserv2ndPPPerc:Float # 添加第二个人价格百分比
-        reservNthPPPerc:Float # 添加第n个人价格百分比
-        configId:String #(32) 配置标识
-        createdDate:date # 创建日期
-        createdByUserLogin:String #(255) 创建的登陆用户创建者
-        lastModifiedByUserLogin:String #(255) 最后修改的登陆用户上次修改者
-        inShippingBox:Boolean # 用货箱否
-        defaultShipmentBoxTypeId:String #(32) 缺省发货箱类型快递公司吗
-        lotIdFilledIn:String #(255) 填写的批次标识
-        orderDecimalQuantity:Boolean # 允许订单数量有小数点否
-        lastUpdatedStamp:date # l数据库记录最后更新时间
-        createdStamp:date # 数据库记录创建时间
-        version:Int 数据库版本号
+scalar Date
+
+type Product {
+    productId: ID!
+    productTypeId: String #(32) not 产品类型标识
+    primaryProductCategoryId: String #(32) 主要产品类型标识
+    primaryProductCategory: ProductCategory
+    manufacturerPartyId: String #(32) 生成制造商标识
+    facilityId: String #(32) 设施标识
+    introductionDate: Date # 引入日期
+    releaseDate: Date #  发布日期
+    supportDiscontinuationDate: Date #l支持结束日期
+    salesDiscontinuationDate: Date #销售终止日期
+    salesDiscWhenNotAvail: Boolean # 缺货时销售有折扣否
+    internalName: String #(255) not 内部名称
+    comments: String #(200) 备注
+    productName: String #(255) 产品名称
+    description: String #(255) 简要描述
+    longDescription: String # mediumtext 详细描述
+    priceDetailText: String #(255) 价格描述文本
+    smallImageUrl: String #(255) 小图
+    mediumImageUrl: String #(255) 中图
+    largeImageUrl: String #(255) 大图
+    detailImageUrl: String #(255) 明细图
+    originalImageUrl: String #(255) 原始图
+    detailScreen: String #(255) 明细的屏幕
+    inventoryMessage: String #(255) 库存信息
+    inventoryItemTypeId: String #(32) 库存项明细类型标识
+    requireInventory: Boolean # 需要库存否
+    quantityUomId: String #(32) 数量度量单位标识
+    quantityIncluded: Float # 已包含的数量
+    piecesIncluded: Float # 包含的部件数
+    requireAmount: Boolean # 需要金额否
+    fixedAmount: Float # 固定面额（金额）
+    amountUomTypeId: String #(32) 金额单位类型
+    weightUomId: String #(32) 重量度量单位标识
+    shippingWeight: Float # 货运重量
+    productWeight: Float # 产品重量
+    heightUomId: String #(32) 高度度量单位标识
+    productHeight: Float # 产品高度
+    shippingHeight: Float # 货运高度
+    widthUomId: String #(32) 宽度度量单位标识
+    productWidth: Float # 产品宽度
+    shippingWidth: Float # 货运宽度
+    depthUomId: String #(32) 深度长度度量单位标识
+    productDepth: Float # 产品深度长度
+    shippingDepth: Float # 货运深度长度
+    diameterUomId: String #(32) 直径度量单位标识
+    productDiameter: Float # 产品直径
+    productRating: Float # 产品评级
+    ratingTypeEnum: String #(32) 评级类型枚举评级类型
+    returnable: Boolean # 是否可退货
+    taxable: Boolean # 征税否
+    chargeShipping: Boolean # 收运费否
+    autoCreateKeywords: Boolean # 自动创建关键字否
+    includeInPromotions: Boolean # 包含在促销中否
+    isVirtual: Boolean # 是否为虚拟产品
+    isVariant: Boolean # 是否为变形产品
+    virtualVariantMethodEnum: String #(32) 虚拟的多样变形方法
+    originGeoId: String #(32) 原=地址位置
+    requirementMethodEnumId: String #(32) 需求方法枚举标识
+    billOfMaterialLevel: String #(32) 物料清单级别
+    reservMaxPersons: Float # 用于租赁的最大人数
+    reserv2ndPPPerc: Float # 添加第二个人价格百分比
+    reservNthPPPerc: Float # 添加第n个人价格百分比
+    configId: String #(32) 配置标识
+    createdDate: Date # 创建日期
+    createdByUserLogin: String #(255) 创建的登陆用户创建者
+    lastModifiedByUserLogin: String #(255) 最后修改的登陆用户上次修改者
+    inShippingBox: Boolean # 用货箱否
+    defaultShipmentBoxTypeId: String #(32) 缺省发货箱类型快递公司吗
+    lotIdFilledIn: String #(255) 填写的批次标识
+    orderDecimalQuantity: Boolean # 允许订单数量有小数点否
+    lastUpDatedStamp: Date # l数据库记录最后更新时间
+    createdStamp: Date # 数据库记录创建时间
+    version: Int # 数据库版本号
 }
+
+input ProductExample {
+    orderByClause: String
+    distinct: Boolean
+}
+
 type Query {
-        countByExample(example:productExample):Long
-        selectByExample(example:productExample):[product]
-        selectByPrimaryKey(productId:String):product
+    countByExample(example: ProductExample): Int
+    selectByExample(example: ProductExample): [Product]
+    selectByPrimaryKey(productId: String): Product
+}
+
+input ProductInput {
+    productId: String
 }
 
 type Mutation{
-        insert(record:product): Int
-        insertSelective(record:product): Int
-        updateByPrimaryKey(record:product): Int
-        deleteByPrimaryKey(productId:String):Int
-}
-type productExample{
-        orderByClause:String
-        distinct:Boolean
-        oredCriteria:[Criteria]
+    insert(record: ProductInput): Int
+    insertSelective(record: ProductInput): Int
+    updateByPrimaryKey(record: ProductInput): Int
+    deleteByPrimaryKey(productId: String): Int
 }
