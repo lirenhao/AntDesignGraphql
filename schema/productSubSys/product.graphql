@@ -86,7 +86,7 @@ input ProductExample {
 type Query {
     countByExample(example: ProductExample): Int
     selectByExample(example: ProductExample): [Product]
-    selectByPrimaryKey(productId: String): Product
+    selectByPrimaryKey(productId: ProductInput): Product
 }
 
 input ProductInput {
@@ -94,8 +94,8 @@ input ProductInput {
 }
 
 type Mutation{
-    insert(record: ProductInput): Int
-    insertSelective(record: ProductInput): Int
-    updateByPrimaryKey(record: ProductInput): Int
-    deleteByPrimaryKey(productId: String): Int
+    insert(record: Product): Int
+    insertSelective(record: Product): Int
+    updateByPrimaryKey(record: Product): Int
+    deleteByPrimaryKey(productId: ProductInput): Int
 }
