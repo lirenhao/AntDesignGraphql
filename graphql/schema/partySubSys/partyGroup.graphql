@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  partyGroup  {
     partyId: ID! #当事人标识

@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  communicationEventType  {
     communicationEventTypeId: ID! #通讯事件类型标识

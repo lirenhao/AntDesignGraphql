@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  productFeature  {
     productFeatureId:ID! #产品特征标识
@@ -11,8 +11,8 @@ type  productFeature  {
     defaultSequenceNum:Float
     abbrev:String
     idCode:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {

@@ -1,14 +1,14 @@
- import { string } from 'prop-types';
+ scalar Date
 
 type  periodType  {
     periodTypeId:ID!
     periodTypeName:String
     description:String
-    periodLength:date
+    periodLength:Date
     uomId:String
     isDeletedTag:Boolean
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

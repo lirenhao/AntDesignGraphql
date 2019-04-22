@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  productPriceComponentExtend  {
     productPriceComponentId:ID!
@@ -6,8 +6,8 @@ type  productPriceComponentExtend  {
     sequenceNum:Int
     description:String
     changedByUserLogin:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {

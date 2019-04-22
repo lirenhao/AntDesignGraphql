@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  geo  {
     geoId:ID!
@@ -8,8 +8,8 @@ type  geo  {
     geoSecCode:String
     abbreviation:String #缩写
     wellKnownText:Boolean
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

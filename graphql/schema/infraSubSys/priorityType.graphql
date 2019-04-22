@@ -1,12 +1,12 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  priorityType  {
     priorityTypeId:ID! #优先类型标识
     priorityTypeName:String
     description:String
     isDeletedTag:Boolean #是否已删除标记
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

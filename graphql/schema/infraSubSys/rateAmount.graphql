@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  rateAmount  {
     rateTypeId:ID!
@@ -7,11 +7,11 @@ type  rateAmount  {
     workEffortId:String #工作计划标识
     partyId:String #当事人标识
     emplPositionTypeId:String #机构职位类型标识
-    fromDate:date #起始日期
-    thruDate:date #终止日期
+    fromDate:Date #起始日期
+    thruDate:Date #终止日期
     rateAmount:Float
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 
@@ -39,5 +39,5 @@ type rateAmountKey {
     workEffortId:String
     partyId:String
     emplPositionTypeId:String
-    fromDate:date
+    fromDate:Date
 }

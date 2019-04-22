@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  responsibilityType  {
     responsibilityTypeId:ID! #职责类型标识
@@ -6,8 +6,8 @@ type  responsibilityType  {
     responsibilityTypeName:String
     hasTable:Boolean
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {

@@ -1,13 +1,13 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  emplPositionFulfillment  {
     emplPositionId:ID! #机构职位标识
     partyId:String  #履行该职位的当事人标识
-    fromDate:date
-    thruDate:date
+    fromDate:Date
+    thruDate:Date
     comments:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
 }
 type Query {
     selectByPrimaryKey(key:emplPositionFulfillmentKey):emplPositionFulfillment
@@ -28,5 +28,5 @@ type Query {
     type emplPositionFulfillmentKey{
         emplPositionId:String!
         partyId:String!
-        fromDate:date!
+        fromDate:Date!
     }

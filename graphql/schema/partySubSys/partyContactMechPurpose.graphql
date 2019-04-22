@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  partyContactMechPurpose  {
     partyId: ID! #当事人标识
@@ -31,5 +31,5 @@ type partyContactMechPurposeKey{
     partyId:String
     contactMechId:String
     contactMechPurposeTypeId:String
-    fromDate:date
+    fromDate:Date
 }

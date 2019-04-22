@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  enumeration  {
     enumId:ID!
@@ -7,8 +7,8 @@ type  enumeration  {
     enumName:String
     sequenceId:String #序号
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
     type Query {

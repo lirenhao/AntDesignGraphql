@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  deliverable  {
     deliverable_id:ID!
@@ -6,8 +6,8 @@ type  deliverable  {
     deliverableName:String #可交付成果名称
     description:String
     isDeletedTag:Boolean
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

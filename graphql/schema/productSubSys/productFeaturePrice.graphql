@@ -1,18 +1,18 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  productFeaturePrice  {
     productFeatureId:ID! #产品特征标识
     productPriceTypeId:String #产品价格类型标识
     currencyUomId:String #货币度量标识
-    fromDate:date #起始日期
-    thruDate:date #终止日期
+    fromDate:Date #起始日期
+    thruDate:Date #终止日期
     price:Float #价格
-    createdDate:date #创建日期
+    createdDate:Date #创建日期
     createdByUserLogin:String
-    lastModifiedDate:date #创建者
+    lastModifiedDate:Date #创建者
     lastModifiedByUserLogin:String #上次修改日期
-    lastUpdatedStamp:date #上次修改者
-    createdStamp:date
+    lastUpdatedStamp:Date #上次修改者
+    createdStamp:Date
     version:Int
 }
 type Query {
@@ -36,5 +36,5 @@ type productFeaturePriceKey{
     productFeatureId:String
     productPriceTypeId:String
     currencyUomId:String
-    fromDate:date
+    fromDate:Date
 }

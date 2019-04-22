@@ -1,15 +1,15 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  productCategoryMember  {
     productCategoryId:ID! #产品类别标识
     productId:String #产品标识
-    fromDate:date #起始日期
-    thruDate:date #终止日期
+    fromDate:Date #起始日期
+    thruDate:Date #终止日期
     comments:String #注释
     sequenceNum:Float #序号数字
     quantity:Float #数量
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 
@@ -33,5 +33,5 @@ type productCategoryMemberExample{
 type productCategoryMemberKey{
     productCategoryId:String
     productId:String
-    fromDate:date
+    fromDate:Date
 }

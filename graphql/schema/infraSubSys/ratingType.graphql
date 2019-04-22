@@ -1,12 +1,12 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  ratingType  {
     ratingTypeId:ID! #等级类型标识
     parentTypeId:String #上级类型标识
     ratingTypeName:String #登记类型名称
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

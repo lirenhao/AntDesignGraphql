@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  uomType  {
     uomTypeId:ID!  #UOM类型标识
@@ -6,8 +6,8 @@ type  uomType  {
     uomTypeName:String
     hasTable:Boolean  #是否库表
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

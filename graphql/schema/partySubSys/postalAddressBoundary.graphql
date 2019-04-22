@@ -1,11 +1,11 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  postalAddressBoundary  {
     contactMechId:ID! #联系机制标识
     geoId:String #地理标识
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

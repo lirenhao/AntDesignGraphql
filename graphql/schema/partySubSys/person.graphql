@@ -1,9 +1,9 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  person  {
     partyId  :ID! #当事人
-    birthDate :date #出生日期
-    deceasedDate  :date
+    birthDate :Date #出生日期
+    deceasedDate  :Date
     firstName  :String #名
     middleName  :String #中间名
     lastName  :String #姓
@@ -25,9 +25,9 @@ type  person  {
     dataSourceId  :String #数据源标识
     isUnread:Boolean #是否无人读过
     lastModifiedByUserLogin  :String #最后更新时的登入者
-    lastUpdatedStamp  :date #数据库记录最后更新时间
+    lastUpdatedStamp  :Date #数据库记录最后更新时间
     createdByUserLogin  :String #创建时的登录者
-    createdStamp  :date #数据库记录创建时间
+    createdStamp  :Date #数据库记录创建时间
     isDeletedTag:Boolean #是否被删除标记
     version: Int
 }

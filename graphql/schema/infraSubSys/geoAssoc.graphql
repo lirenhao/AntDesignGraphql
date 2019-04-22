@@ -1,11 +1,11 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  geoAssoc  {
     geoId:ID!
     geoIdTo:String
     geoAssocTypeId:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {

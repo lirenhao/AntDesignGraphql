@@ -1,11 +1,11 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  rateType  {
     rateTypeId:ID!
     rateTypeName:String
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

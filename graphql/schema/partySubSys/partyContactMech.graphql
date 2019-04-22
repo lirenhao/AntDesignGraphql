@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  partyContactMech  {
     partyId: ID! #当事人标识
@@ -36,5 +36,5 @@ type partyContactMechExample{
 type partyContactMechKey{
     partyId:String
     contactMechId:String
-    fromDate:date
+    fromDate:Date
 }

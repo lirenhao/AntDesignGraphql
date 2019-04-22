@@ -1,13 +1,13 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  productCategoryRollup  {
     productCategoryId:ID! #产品类别标识
     parentProductCategoryId:String #上级产品类别标识
-    fromDate:date    #起始日期
-    thruDate:date    #终止日期
+    fromDate:Date    #起始日期
+    thruDate:Date    #终止日期
     sequenceNum:Float  #序号数字
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 
@@ -31,5 +31,5 @@ type productCategoryRollupExample{
 type productCategoryRollupKey{
     productCategoryId:String
     parentProductCategoryId:String
-    fromDate:date
+    fromDate:Date
 }

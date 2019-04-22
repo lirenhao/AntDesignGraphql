@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  uom  {
     uomId:ID! #UOM标识
@@ -6,8 +6,8 @@ type  uom  {
     uomName:String
     abbreviation:String #缩写
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

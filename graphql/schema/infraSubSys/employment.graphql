@@ -1,16 +1,16 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  employment  {
     partyIdFrom:ID!
     partyIdTo:String
     roleTypeIdFrom:String  #源角色类型标识
     roleTypeIdTo:String  #目标角色类型标识
-    fromDate:date #起始日期
-    thruDate:date  #终止日期
+    fromDate:Date #起始日期
+    thruDate:Date  #终止日期
     termination_reason_id:String  #终止原因标识
     termination_type_id:String #终止类型标识
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

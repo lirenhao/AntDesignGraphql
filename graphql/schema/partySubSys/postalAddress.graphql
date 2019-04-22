@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  postalAddress  {
     contactMechId:ID! #联系机制标识
@@ -19,8 +19,8 @@ type  postalAddress  {
     municipalityGeoId:String
     postalCodeGeoId:String #邮编地理标识_所属地区
     geoPointId:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

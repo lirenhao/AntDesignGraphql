@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  emplPosition  {
     emplPositionId:ID! #机构职位标识
@@ -7,16 +7,16 @@ type  emplPosition  {
     partyId:String #当事人
     budgetId:String #预算标识
     budgetItemSeqId:String #预算项序号
-    estimatedFromDate:date #预计开始时间
-    estimatedThruDate:date #预计结束时间
+    estimatedFromDate:Date #预计开始时间
+    estimatedThruDate:Date #预计结束时间
     salaryFlag:Boolean #薪资标志
     exemptFlag:Boolean #免除标志
     fulltimeFlag:Boolean #全职标志
     temporaryFlag:Boolean #临时标志
-    actualFromDate:date #实际开始日期
-    actualThruDate:date #实际终止日期
-    lastUpdatedStamp:date
-    createdStamp:date
+    actualFromDate:Date #实际开始日期
+    actualThruDate:Date #实际终止日期
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
     type Query {

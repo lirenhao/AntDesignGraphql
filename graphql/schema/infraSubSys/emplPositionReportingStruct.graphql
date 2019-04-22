@@ -1,14 +1,14 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  emplPositionReportingStruct  {
     emplPositionIdReportingTo:ID!
     emplPositionIdManagedBy:String
-    fromDate:date
-    thruDate:date
+    fromDate:Date
+    thruDate:Date
     comments:String
     primaryFlag:Boolean #主标识
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {
@@ -30,5 +30,5 @@ type Query {
     type emplPositionReportingStructKey{
         emplPositionIdReportingTo:String
         emplPositionIdManagedBy:String
-        fromDate:date
+        fromDate:Date
     }

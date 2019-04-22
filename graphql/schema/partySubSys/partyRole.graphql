@@ -1,11 +1,11 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  partyRole  {
     partyId :ID! #当事人标识
     roleTypeId :String #角色类型标识
     isDeletedTag:Boolean #是否被标记为删除标记
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {

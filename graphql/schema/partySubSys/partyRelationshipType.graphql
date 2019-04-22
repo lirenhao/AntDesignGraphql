@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  partyRelationshipType  {
     partyRelationshipTypeId :ID! #当事人关系类型标识
@@ -8,8 +8,8 @@ type  partyRelationshipType  {
     description :String #描述
     roleTypeIdValidFrom :String #有效的源角色类型标识
     roleTypeIdValidTo :String #有效的目的角色类型标识
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {

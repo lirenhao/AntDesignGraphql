@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  statusType  {
     statusTypeId:ID! #状态类型标识
@@ -6,8 +6,8 @@ type  statusType  {
     hasTable:String #是否库表
     description:String
     isDeletedTag:Boolean
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  partyIdentification  {
     partyIdentificationId: ID! #当事人身份标识符关系表主键

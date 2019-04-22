@@ -1,13 +1,13 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  emplPositionResponsibility  {
     emplPositionId:ID! #机构职位标识
     responsibilityTypeId:String #职责类型标识
-    fromDate:date
-    thruDate:date
+    fromDate:Date
+    thruDate:Date
     comments:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {
@@ -29,6 +29,6 @@ type Query {
     type emplPositionResponsibilityKey {
         emplPositionId:String!
         responsibilityTypeId:String!
-        fromDate:date!
+        fromDate:Date!
     }
 }

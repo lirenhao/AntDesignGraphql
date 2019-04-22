@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  skillType  {
     skillTypeId:ID! #技能类型标
@@ -6,8 +6,8 @@ type  skillType  {
     skillTypeName:String
     hasTable:Boolean #有库表否
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {

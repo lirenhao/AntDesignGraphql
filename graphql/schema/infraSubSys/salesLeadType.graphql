@@ -1,12 +1,12 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  salesLeadType  {
     salesLeadTypeId:ID! #销售线索类型标识
     parentTypeId:String #上级类型标识
     salesLeadTypeName:String
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

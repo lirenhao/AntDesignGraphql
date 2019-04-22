@@ -1,13 +1,13 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  validResponsibility  {
     emplPositionTypeId:ID!  #职位类型
     responsibilityTypeId:String  #职位类型标识
-    fromDate:date #开始时间
-    thruDate:date #结束时间
+    fromDate:Date #开始时间
+    thruDate:Date #结束时间
     comments:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {
@@ -31,5 +31,5 @@ type validResponsibilityExample{
 type validResponsibilityKey{
     emplPositionTypeId:String!
     responsibilityTypeId:String!
-    fromDate:date!
+    fromDate:Date!
 }

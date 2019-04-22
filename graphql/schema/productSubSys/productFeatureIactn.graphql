@@ -1,12 +1,12 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  productFeatureIactn  {
     productId:ID!
     productFeatureId:String
     productFeatureIdTo:String
     productFeatureIactnTypeId:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

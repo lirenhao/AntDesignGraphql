@@ -1,12 +1,12 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  statusValidChange  {
     statusIdFrom:ID!  #源状态标识
     statusIdTo:String   #目标状态标识
     conditionExpression:String #条件表达式
     transitionName:String #转换名称
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

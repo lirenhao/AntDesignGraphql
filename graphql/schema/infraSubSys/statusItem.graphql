@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  statusItem  {
     statusId:ID! #状态标识
@@ -7,8 +7,8 @@ type  statusItem  {
     sequenceId:String #序号
     description:String
     isDeletedTag:Boolean
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {

@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  productAssocType  {
     productAssocTypeId:ID! #产品关联类型标识
@@ -6,8 +6,8 @@ type  productAssocType  {
     productAssocTypeName:String
     isTable:Boolean #有表否
     description:String #简要描述
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

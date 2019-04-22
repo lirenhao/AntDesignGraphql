@@ -1,12 +1,12 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  geoType  {
     geoTypeId:ID!
     parentTypeId:String #上级类型标识
     hasTable:Boolean #有库表否
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {

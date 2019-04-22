@@ -1,11 +1,11 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  productPricePurpose  {
     productPricePurposeId:ID! #产品价格目的标识
     productPricePurposeName:String
     description:String #描述
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

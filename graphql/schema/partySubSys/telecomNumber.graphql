@@ -1,12 +1,12 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  telecomNumber {
     contactMechId:ID! #联系机制标识
     areaCode:String #地区代码
     contactNumber:String #联系号码
     askForName:String #问候名称
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

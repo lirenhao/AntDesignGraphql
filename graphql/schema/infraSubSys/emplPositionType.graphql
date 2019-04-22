@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  emplPositionType  {
     emplPositionTypeId:ID! #职位类型
@@ -6,8 +6,8 @@ type  emplPositionType  {
     positionTypeName:String
     hasTable:Boolean  #有库表否
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {

@@ -1,12 +1,12 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  saleType  {
     saleTypeId:ID! #销售类型标识
     parentTypeId:String
     saleTypeName:String
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {

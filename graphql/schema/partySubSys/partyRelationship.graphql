@@ -1,12 +1,12 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  partyRelationship  {
     partyIdFrom: ID! #源当事人
     partyIdTo :String #目的当事人
     roleTypeIdFrom :String #源当事人角色类型标记
     roleTypeIdTo :String #目标当事人角色类型标记
-    fromDate:date #起始日期
-    thruDate:date #终止日期
+    fromDate:Date #起始日期
+    thruDate:Date #终止日期
     statusId :String #状态标识
     relationshipName :String #关系名称
     securityGroupId :String #安全组标识
@@ -15,8 +15,8 @@ type  partyRelationship  {
     permissionsEnumId :String
     comments :String #注释
     positionTitle :String
-    lastUpdatedStamp:datet
-    createdStamp:date
+    lastUpdatedStamp:Datet
+    createdStamp:Date
     version:int
 }
 type Query {
@@ -40,5 +40,5 @@ type partyRelationshipKey{
     partyIdTo:String
     roleTypeIdFrom:String
     roleTypeIdTo:String
-    fromDate:date
+    fromDate:Date
 }

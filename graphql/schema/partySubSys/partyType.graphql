@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  partyType  {
   partyTypeId :ID! #当事人类型标识
@@ -6,8 +6,8 @@ type  partyType  {
   partyTypeName:String
   hasTable:Boolean #有库表否
   description:String
-  lastUpdatedStamp:date
-  createdStamp:date
+  lastUpdatedStamp:Date
+  createdStamp:Date
   isDeletedTag:Boolean
   version:Int
 }

@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  productFeatureIactnType  {
     productFeatureIactnTypeId:ID! #产品特征互操作类型标识
@@ -6,8 +6,8 @@ type  productFeatureIactnType  {
     productFeatureIactnTypeName:String
     hasTable:Boolean  #有库表否
     description:String  #描述
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

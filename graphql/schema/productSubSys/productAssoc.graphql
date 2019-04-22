@@ -1,11 +1,11 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  productAssoc  {
     productId:ID! #产品标识
     productIdTo:String #目标产品标识
     productAssocTypeId:String #产品关联类型标识
-    fromDate:date #起始日期
-    thruDate:date #终止日期
+    fromDate:Date #起始日期
+    thruDate:Date #终止日期
     sequenceNum:Float #序号数字
     reason:String #原因
     quantity:Float #数量
@@ -14,8 +14,8 @@ type  productAssoc  {
     routingWorkEffortId:String #路由工作计划标识
     estimateCalcMethod:String #预计计算方法
     recurrenceInfoId:String #循环信息标识
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:int
 }
 type Query {
@@ -39,5 +39,5 @@ type productAssocKey{
     productId:String
     productIdTo:String
     productAssocTypeId:String
-    fromDate:date
+    fromDate:Date
 }

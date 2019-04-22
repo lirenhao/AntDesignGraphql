@@ -1,11 +1,11 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  mimeType  {
     mimeTypeId:ID!   #多媒体类型
     mimeTypeName:String
     description:Boolean
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  roleType {
     roleTypeId:ID! #角色类型标识
@@ -6,8 +6,8 @@ type  roleType {
     parentTypeId:String  #上级类型
     hasTable:Boolean #有库表否
     description:String
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 

@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  contactMechType  {
     contactMechTypeId: ID! #联系机制类型标识

@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  dataSource {
     dataSourceId:ID!
@@ -6,8 +6,8 @@ type  dataSource {
     dataSourceName:String
     description:String
     isDeletedTag:Boolean #是否已删除标记
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {
@@ -16,15 +16,15 @@ type Query {
     countByExample(example:dataSourceExample):Long
 }
 type Mutation{
-        insert(record:dataSource): Int
-        insertSelective(record:dataSource): Int
-        updateByPrimaryKey(record:dataSource): Int
-        deleteByPrimaryKey(dataSourceId:String):Int
+    insert(record:dataSource): Int
+    insertSelective(record:dataSource): Int
+    updateByPrimaryKey(record:dataSource): Int
+    deleteByPrimaryKey(dataSourceId:String):Int
     }
 type dataSourceExample{
-        orderByClause:String
-        distinct:Boolean
-        oredCriteria:[Criteria]
-    }
+    orderByClause:String
+    distinct:Boolean
+    oredCriteria:[Criteria]
+}
 
 

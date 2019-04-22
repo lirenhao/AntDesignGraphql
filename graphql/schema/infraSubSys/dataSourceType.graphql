@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+scalar Date
 
 type  dataSourceType {
     dataSourceTypeId:ID!
@@ -6,8 +6,8 @@ type  dataSourceType {
     dataSourceTypeName:String
     description:String
     isDeletedTag:Boolean
-    lastUpdatedStamp:date
-    createdStamp:date
+    lastUpdatedStamp:Date
+    createdStamp:Date
     version:Int
 }
 type Query {
