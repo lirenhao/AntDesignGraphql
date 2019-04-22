@@ -1,16 +1,11 @@
-import { queryList, queryById, insert, updateById, deleteById } from '../data'
+import path from 'path'
+import { importSchema } from 'graphql-import'
+import { makeExecutableSchema } from 'graphql-tools'
+import templateResolvers from './resolvers/template'
+import dateResolver from './resolvers/scalar/date'
 
-export default (type, resolver = {}, query = {}, mutation = {}) => ({
-  ...resolver,
-  Query: {
-    [`${type}List`]: (_, param) => queryList(type, param),
-    [`${type}ById`]: (_, { id }) => queryById(type, id),
-    ...query,
-  },
-  Mutation: {
-    [`${type}Insert`]:(_, { record }) => insert(type, record),
-    [`${type}UpdateById`]: (_, { id, record }) => updateById(type, id, record),
-    [`${type}DeleteById`]: (_, { id }) => deleteById(type, id),
-    ...mutation,
-  },
-})
+export default (sys, type) => {
+  const typeDefs = importSchema(path.join(__dirname, 'schema', sys, `${type}.graphql`))
+  const resolvers = templateResolvers(type, dateResolver)
+  return makeExecutableSchema({ typeDefs, resolvers })
+}
