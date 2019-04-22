@@ -1,0 +1,41 @@
+# import ProductCategoryType from 'productCategoryType.graphql'
+
+scalar Date
+
+type ProductCategory {
+    productCategoryId: ID! #产品类别标识
+    productCategoryTypeId: String #产品类别类型标识
+    primaryParentCategoryId: String #主要上级类别
+    categoryName: String #类别名称
+    description: String #简要描述
+    longDescription: String #详细描述
+    categoryImageUrl: String #类别图像地址
+    linkOneImageUrl: String #按钮图像地址
+    linkTwoImageUrl: String #按钮两个图像地址
+    detailScreen: String #详细屏幕
+    showInSelect: Boolean
+    lastUpDatedStamp: Date
+    createdStamp: Date
+    version: Int
+}
+
+extend type ProductCategory {
+    productCategoryType: ProductCategoryType
+}
+
+type Query {
+    productCategory(productCategoryTypeId: String categoryName: String): [ProductCategory]
+}
+
+input ProductCategoryInput {
+    productCategoryTypeId: String
+    primaryParentCategoryId: String
+    categoryName: String
+    description: String
+}
+
+type Mutation{
+    productCategoryInsert(record: ProductCategoryInput): ProductCategory
+    productCategoryUpdateById(id: String record: ProductCategoryInput): ProductCategory
+    productCategoryDeleteById(id: String): Boolean
+}

@@ -1,0 +1,33 @@
+scalar Date
+
+type ProductType  {
+    productTypeId: ID! #产品类型标识
+    parentTypeId: String #上级类型标识
+    productTypeName: String
+    isPhysical: Boolean #物理产品否
+    isDigital: Boolean #数字产品否
+    hasTable: Boolean #有库表
+    description: String #简要描述
+    lastUpdatedStamp: Date
+    createdStamp: Date
+    version: Int
+}
+type Query {
+    productType: [ProductType]
+    productTypeById(productTypeById: String): ProductType
+}
+
+input ProductTypeInput {
+    parentTypeId: String
+    productTypeName: String
+    isPhysical: Boolean #物理产品否
+    isDigital: Boolean #数字产品否
+    hasTable: Boolean #有库表
+    description: String #简要描述
+}
+
+type Mutation{
+    productTypeInsert(record: ProductTypeInput): ProductType
+    productTypeUpdateById(id: String record: ProductTypeInput): ProductType
+    productTypeDeleteById(id: String): Boolean
+}

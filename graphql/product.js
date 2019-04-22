@@ -2,60 +2,17 @@ import path from 'path'
 import jsonfile from 'jsonfile'
 import { importSchema } from 'graphql-import'
 import { makeExecutableSchema } from 'graphql-tools'
+import dateResolver from './resolvers/scalar/date'
+import productResolver from './resolvers/productSubSys/product'
 
 const typeFile = path.join(__dirname, '../data/type.json')
 const productFile = path.join(__dirname, '../data/product.json')
 
-const typeDefs = importSchema(path.join(__dirname, '../schema/product.graphql'))
+const typeDefs = importSchema(path.join(__dirname, './schema/product.graphql'))
 
 const resolvers = {
-  Product: {
-    productType: ({ productTypeId }) =>
-      jsonfile.readFile(typeFile).then(({ productType }) => productType[productTypeId] || {}),
-    primaryProductCategory: ({ primaryProductCategoryId }) =>
-      jsonfile
-        .readFile(productFile)
-        .then(({ category }) => category[primaryProductCategoryId] || {}),
-  },
-  ProductCategory: {
-    productCategoryType: ({ productCategoryTypeId }) =>
-      jsonfile
-        .readFile(typeFile)
-        .then(({ productCategoryType }) => productCategoryType[productCategoryTypeId] || {}),
-  },
-  ProductCategoryMember: {
-    productCategory: ({productCategoryId}) =>
-      jsonfile
-        .readFile(productFile)
-        .then(({ category }) => category[productCategoryId] || {}),
-    product: ({productId}) =>
-      jsonfile.readFile(productFile).then(({ product }) => product[productId] || {}),
-  },
-  ProductFeature: {
-    productFeatureType: ({productFeatureTypeId}) =>
-      jsonfile.readFile(typeFile)
-        .then(({ productFeatureType }) => productFeatureType[productFeatureTypeId] || {}),
-  },
-  ProductFeatureIactn: {
-    productFeature: ({productFeatureId}) => 
-      jsonfile.readFile(productFile).then(({ feature }) => feature[productFeatureId] || {}),
-    productFeatureTo: ({productFeatureIdTo}) => 
-      jsonfile.readFile(productFile).then(({ feature }) => feature[productFeatureIdTo] || {}),
-    productFeatureIactnType: ({productFeatureIactnTypeId}) => 
-      jsonfile.readFile(typeFile)
-        .then(({ productFeatureIactnType }) => productFeatureIactnType[productFeatureIactnTypeId] || {}),
-    product: ({productId}) =>
-      jsonfile.readFile(productFile).then(({ product }) => product[productId] || {}),
-  },
-  ProductFeatureAppl: {
-    product: ({productId}) =>
-      jsonfile.readFile(productFile).then(({ product }) => product[productId] || {}),
-    productFeature: ({productFeatureId}) => 
-      jsonfile.readFile(productFile).then(({ feature }) => feature[productFeatureId] || {}),
-    productFeatureApplType: ({productFeatureApplTypeId}) => 
-      jsonfile.readFile(typeFile)
-        .then(({ productFeatureApplType }) => productFeatureApplType[productFeatureApplTypeId] || {}),
-  },
+  ...dateResolver,
+  ...productResolver,
   Query: {
     productCategory: () => {
       return jsonfile.readFile(productFile)
@@ -90,7 +47,7 @@ const resolvers = {
           .filter(item => (productId ? item.productId === productId : true))
       );
     },
-    productFeatureAppl: (_, { productId, productFeatureId }) => {
+    productFeatureAppl: (root, { productId, productFeatureId }, context) => {
       return jsonfile.readFile(productFile).then(({ featureAppl }) =>
         Object.keys(featureAppl)
           .map(key => featureAppl[key])

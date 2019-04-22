@@ -1,3 +1,4 @@
+# import ProductType from 'productType.graphql'
 # import ProductCategory from 'productCategory.graphql'
 
 scalar Date
@@ -6,7 +7,6 @@ type Product {
     productId: ID!
     productTypeId: String #(32) not 产品类型标识
     primaryProductCategoryId: String #(32) 主要产品类型标识
-    primaryProductCategory: ProductCategory
     manufacturerPartyId: String #(32) 生成制造商标识
     facilityId: String #(32) 设施标识
     introductionDate: Date # 引入日期
@@ -46,10 +46,10 @@ type Product {
     shippingWidth: Float # 货运宽度
     depthUomId: String #(32) 深度长度度量单位标识
     productDepth: Float # 产品深度长度
-    shippingDepth: Float # 货运深度长度
-    diameterUomId: String #(32) 直径度量单位标识
-    productDiameter: Float # 产品直径
-    productRating: Float # 产品评级
+    shippingDepth: Float # 货运深度inventoryItemType
+    diameterUomId: String #(32) 直inventoryItemType标识
+    productDiameter: Float # 产品直inventoryItemType
+    productRating: Float # 产品评级inventoryItemType
     ratingTypeEnum: String #(32) 评级类型枚举评级类型
     returnable: Boolean # 是否可退货
     taxable: Boolean # 征税否
@@ -78,24 +78,41 @@ type Product {
     version: Int # 数据库版本号
 }
 
-input ProductExample {
-    orderByClause: String
-    distinct: Boolean
+extend type Product {
+    productType: ProductType
+    primaryProductCategory: ProductCategory
+    # manufacturerParty: ManufacturerParty
+    # inventoryItemType: InventoryItemType
+    # quantityUom: QuantityUom
+    # amountUomType: AmountUomType
+    # weightUom: WeightUom
+    # depthUom: DepthUom
+    # diameterUom: DiameterUom
+    # originGeo: OriginGeo
+    # requirementMethodEnum: RequirementMethodEnum
+    # config: Config
+    # defaultShipmentBoxType: DefaultShipmentBoxType
 }
 
 type Query {
-    countByExample(example: ProductExample): Int
-    selectByExample(example: ProductExample): [Product]
-    selectByPrimaryKey(productId: ProductInput): Product
+    product(productTypeId: String productName: String): [Product]
 }
 
 input ProductInput {
-    productId: String
+    productName: String
+    productTypeId: String
+    introductionDate: Date
+    releaseDate: Date
+    supportDiscontinuationDate: Date
+    salesDiscontinuationDate: Date
+    salesDiscWhenNotAvail: Boolean
+    internalName: String
+    comments: String
+    description: String
 }
 
 type Mutation{
-    insert(record: Product): Int
-    insertSelective(record: Product): Int
-    updateByPrimaryKey(record: Product): Int
-    deleteByPrimaryKey(productId: ProductInput): Int
+    productInsert(record: ProductInput): Product
+    productUpdateById(id: String record: ProductInput): Product
+    productDeleteById(id: String): Boolean
 }

@@ -2,8 +2,8 @@ import path from 'path'
 import jsonfile from 'jsonfile'
 import { importSchema } from 'graphql-import'
 import { makeExecutableSchema } from 'graphql-tools'
-import dateResolver from './resolvers/date'
-import productResolver from './resolvers/product'
+import dateResolver from './resolvers/scalar/date'
+import productResolver from './resolvers/productSubSys/product'
 
 const productFile = path.join(__dirname, '../data/product.json')
 
@@ -15,6 +15,7 @@ const resolvers = {
   Query: {
     countByExample: (_, { example }) => ({}),
     selectByExample: (_, { example }) => {
+      console.log('test')
       return jsonfile.readFile(productFile)
         .then(({ product }) => Object.keys(product).map(key => product[key]))
     },
