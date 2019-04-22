@@ -1,13 +1,19 @@
-import path from 'path'
-import jsonfile from 'jsonfile'
-
-const productFile = path.join(__dirname, '../../data/product.json')
+import dateResolver from '../scalar/date'
+import { queryList, queryById, insert, updateById } from '../../../data'
 
 module.exports = {
+  ...dateResolver,
   Product: {
-    primaryProductCategory: ({ primaryProductCategoryId }) =>
-      jsonfile
-        .readFile(productFile)
-        .then(({ category }) => category[primaryProductCategoryId] || {}),
+    productType: ({ productTypeId: id }) => queryById('productType', id),
+    primaryProductCategory: ({ primaryProductCategoryId: id }) => queryById('productCategory', id),
+  },
+  Query: {
+    productList: (_, param) => queryList('product', param),
+    productById: (_, { id }) => queryById('product', id),
+  },
+  Mutation: {
+    productInsert: (_, { record }) => insert('product', record),
+    productUpdateById: (_, { id, record }) => updateById('product', id, record),
+    productDeleteById: (_, { id }) => deleteById('product', id),
   },
 }

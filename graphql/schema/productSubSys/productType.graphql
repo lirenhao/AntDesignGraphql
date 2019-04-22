@@ -13,8 +13,8 @@ type ProductType  {
     version: Int
 }
 type Query {
-    productType: [ProductType]
-    productTypeById(productTypeById: String): ProductType
+    productTypeList: [ProductType]
+    productTypeById(id: String): ProductType
 }
 
 input ProductTypeInput {

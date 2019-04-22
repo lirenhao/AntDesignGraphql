@@ -17,6 +17,8 @@ type ProductCategory {
     lastUpDatedStamp: Date
     createdStamp: Date
     version: Int
+    
+    productCategoryType: ProductCategoryType
 }
 
 extend type ProductCategory {
@@ -24,7 +26,8 @@ extend type ProductCategory {
 }
 
 type Query {
-    productCategory(productCategoryTypeId: String categoryName: String): [ProductCategory]
+    productCategoryList(productCategoryTypeId: String categoryName: String): [ProductCategory]
+    productCategoryById(id: String): ProductCategory
 }
 
 input ProductCategoryInput {

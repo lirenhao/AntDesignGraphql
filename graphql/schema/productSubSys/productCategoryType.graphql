@@ -13,7 +13,7 @@ type  ProductCategoryType  {
 
 type Query {
   productCategoryTypeList: [ProductCategoryType]
-  productCategoryTypeById(productTypeById: String): ProductCategoryType
+  productCategoryTypeById(id: String): ProductCategoryType
 }
 
 input ProductCategoryTypeInput {

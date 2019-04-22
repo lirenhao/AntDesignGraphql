@@ -76,6 +76,9 @@ type Product {
     lastUpDatedStamp: Date # l数据库记录最后更新时间
     createdStamp: Date # 数据库记录创建时间
     version: Int # 数据库版本号
+    
+    productType: ProductType
+    primaryProductCategory: ProductCategory
 }
 
 extend type Product {
@@ -95,7 +98,8 @@ extend type Product {
 }
 
 type Query {
-    product(productTypeId: String productName: String): [Product]
+    productList(productTypeId: String productName: String): [Product]
+    productById(id: String): Product
 }
 
 input ProductInput {
