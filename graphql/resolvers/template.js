@@ -1,9 +1,11 @@
+import dateResolver from './scalar/date'
 import { queryList, queryById, insert, updateById, deleteById } from '../../data'
 
-export default (type, resolver = {}, query = {}, mutation = {}) => ({
+export default (type, { resolver = {}, query = {}, mutation = {} }) => ({
+  ...dateResolver,
   ...resolver,
   Query: {
-    [`${type}List`]: (_, param) => queryList(type, param),
+    [`${type}All`]: (_, param) => queryList(type, param),
     [`${type}ById`]: (_, { id }) => queryById(type, id),
     ...query,
   },

@@ -76,7 +76,7 @@ type Product {
     lastUpDatedStamp: Date # l数据库记录最后更新时间
     createdStamp: Date # 数据库记录创建时间
     version: Int # 数据库版本号
-    
+
     productType: ProductType
     primaryProductCategory: ProductCategory
 }
@@ -97,11 +97,6 @@ extend type Product {
     # defaultShipmentBoxType: DefaultShipmentBoxType
 }
 
-type Query {
-    productList(productTypeId: String productName: String): [Product]
-    productById(id: String): Product
-}
-
 input ProductInput {
     productName: String
     productTypeId: String
@@ -113,10 +108,4 @@ input ProductInput {
     internalName: String
     comments: String
     description: String
-}
-
-type Mutation{
-    productInsert(record: ProductInput): Product
-    productUpdateById(id: String record: ProductInput): Product
-    productDeleteById(id: String): Boolean
 }

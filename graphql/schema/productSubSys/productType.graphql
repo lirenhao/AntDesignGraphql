@@ -12,10 +12,6 @@ type ProductType  {
     createdStamp: Date
     version: Int
 }
-type Query {
-    productTypeList: [ProductType]
-    productTypeById(id: String): ProductType
-}
 
 input ProductTypeInput {
     parentTypeId: String
@@ -24,10 +20,4 @@ input ProductTypeInput {
     isDigital: Boolean #数字产品否
     hasTable: Boolean #有库表
     description: String #简要描述
-}
-
-type Mutation{
-    productTypeInsert(record: ProductTypeInput): ProductType
-    productTypeUpdateById(id: String record: ProductTypeInput): ProductType
-    productTypeDeleteById(id: String): Boolean
 }

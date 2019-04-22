@@ -11,20 +11,9 @@ type  ProductCategoryType  {
     version: Int
 }
 
-type Query {
-  productCategoryTypeList: [ProductCategoryType]
-  productCategoryTypeById(id: String): ProductCategoryType
-}
-
 input ProductCategoryTypeInput {
   parentTypeId: String  #父类型标识
   productCategoryTypeName: String
   hasTable: Boolean #有库表
   description: String #简要描述
-}
-
-type Mutation{
-  productCategoryTypeInsert(record: ProductCategoryTypeInput): ProductCategoryType
-  productCategoryTypeUpdateById(id: String record: ProductCategoryTypeInput): ProductCategoryType
-  productCategoryTypeDeleteById(id: String): Boolean
 }

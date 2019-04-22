@@ -25,6 +25,7 @@
     "express-graphql": "^0.7.1",
     "graphql": "^14.2.1",
     "graphql-import": "^0.7.1",
+    "graphql-tag": "^2.10.1",
     "graphql-tools": "^4.0.4",
     "jsonfile": "^5.0.0",
     "moment": "^2.24.0",

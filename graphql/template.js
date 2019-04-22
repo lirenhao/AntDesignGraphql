@@ -1,11 +1,10 @@
-import path from 'path'
-import { importSchema } from 'graphql-import'
 import { makeExecutableSchema } from 'graphql-tools'
+import templateTypeDefs from './schema/template'
 import templateResolvers from './resolvers/template'
 import dateResolver from './resolvers/scalar/date'
 
-export default (sys, type) => {
-  const typeDefs = importSchema(path.join(__dirname, 'schema', sys, `${type}.graphql`))
-  const resolvers = templateResolvers(type, dateResolver)
+export default (sys, type, {typeDefsSupp = {}, resolversSupp = {}}) => {
+  const typeDefs = templateTypeDefs(sys, type, typeDefsSupp)
+  const resolvers = templateResolvers(type, resolversSupp)
   return makeExecutableSchema({ typeDefs, resolvers })
 }

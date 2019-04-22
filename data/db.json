@@ -1692,6 +1692,15 @@
       "lastUpdatedStamp": "2019-03-17 11:39:38",
       "createdStamp": "2019-03-17 10:39:38",
       "version": "v1.0.0"
+    },
+    "CU9RKqADm": {
+      "productName": "test",
+      "productTypeId": "1",
+      "introductionDate": "2019-04-22",
+      "productId": "CU9RKqADm",
+      "lastUpdatedStamp": "2019-04-22 23:03:51",
+      "createdStamp": "2019-04-22 23:03:51",
+      "version": 0
     }
   },
   "productAssoc": {},

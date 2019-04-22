@@ -1,8 +1,12 @@
-import path from 'path'
-import { importSchema } from 'graphql-import'
-import { makeExecutableSchema } from 'graphql-tools'
-import resolvers from '../resolvers/productSubSys/product'
+import { queryById } from '../../data'
 
-const typeDefs = importSchema(path.join(__dirname, '../schema/productSubSys/product.graphql'))
-
-export default makeExecutableSchema({ typeDefs, resolvers })
+export default {
+  resolversSupp: {
+    resolver: {
+      Product: {
+        productType: ({ productTypeId: id }) => queryById('productType', id),
+        primaryProductCategory: ({ primaryProductCategoryId: id }) => queryById('productCategory', id),
+      },
+    }
+  },
+}

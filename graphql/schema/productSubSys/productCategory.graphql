@@ -25,20 +25,14 @@ extend type ProductCategory {
     productCategoryType: ProductCategoryType
 }
 
-type Query {
-    productCategoryList(productCategoryTypeId: String categoryName: String): [ProductCategory]
-    productCategoryById(id: String): ProductCategory
-}
+# type Query {
+#     productCategoryList(productCategoryTypeId: String categoryName: String): [ProductCategory]
+#     productCategoryById(id: String): ProductCategory
+# }
 
 input ProductCategoryInput {
     productCategoryTypeId: String
     primaryParentCategoryId: String
     categoryName: String
     description: String
-}
-
-type Mutation{
-    productCategoryInsert(record: ProductCategoryInput): ProductCategory
-    productCategoryUpdateById(id: String record: ProductCategoryInput): ProductCategory
-    productCategoryDeleteById(id: String): Boolean
 }
