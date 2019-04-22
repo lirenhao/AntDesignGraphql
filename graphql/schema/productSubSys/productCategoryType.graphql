@@ -5,7 +5,7 @@ type  ProductCategoryType  {
     parentTypeId: String  #父类型标识
     productCategoryTypeName: String
     hasTable: Boolean #有表否
-    description: Boolean
+    description: String
     lastUpdatedStamp: Date
     createdStamp: Date
     version: Int
