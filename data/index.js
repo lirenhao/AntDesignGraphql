@@ -31,7 +31,7 @@ export const insert = async (type, record) => {
   const data = db[type] || {}
   data[key] = value
   db[type] = data
-  await jsonfile.writeFile(file, dataSource, { spaces: 2 })
+  await jsonfile.writeFile(dbFile, db, { spaces: 2 })
   return value
 }
 
@@ -39,10 +39,26 @@ export const insetUnion = (type, record) => {
   
 }
 
-export const updateById = (type, id, record) => {
-
+export const updateById = async (type, id, record) => {
+  const db = await jsonfile.readFile(dbFile)
+  const data = db[type]
+  const value = data[id]
+  data[id] = {
+    ...value,
+    ...record,
+    lastUpdatedStamp: moment().format('YYYY-MM-DD HH:mm:ss'),
+  }
+  await jsonfile.writeFile(dbFile, db, { spaces: 2 })
+  return data[id]
 }
 
-export const  deleteById = (type, id) => {
-
+export const  deleteById = async (type, id) => {
+  try {
+    const db = await jsonfile.readFile(dbFile)
+    delete db[type][id]
+    await jsonfile.writeFile(dbFile, db, { spaces: 2 })
+  } catch (e) {
+    return false
+  }
+  return true
 }
