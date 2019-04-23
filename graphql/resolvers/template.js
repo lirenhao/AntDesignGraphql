@@ -5,7 +5,7 @@ export default (type, { resolver = {}, query = {}, mutation = {} }) => ({
   ...dateResolver,
   ...resolver,
   Query: {
-    [`${type}All`]: (_, param) => queryList(type, param),
+    [`${type}All`]: (_, args) => queryList(type, args),
     [`${type}ById`]: (_, { id }) => queryById(type, id),
     ...query,
   },

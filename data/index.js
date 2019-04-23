@@ -35,8 +35,17 @@ export const insert = async (type, record) => {
   return value
 }
 
-export const insetUnion = (type, record) => {
-  
+export const insetUnion = async (type, id, record) => {
+  const db = await jsonfile.readFile(dbFile)
+  const data = db[type]
+  data[id] = {
+    ...record,
+    lastUpdatedStamp: moment().format('YYYY-MM-DD HH:mm:ss'),
+    createdStamp: moment().format('YYYY-MM-DD HH:mm:ss'),
+    version: 0,
+  }
+  await jsonfile.writeFile(dbFile, db, { spaces: 2 })
+  return data[id]
 }
 
 export const updateById = async (type, id, record) => {

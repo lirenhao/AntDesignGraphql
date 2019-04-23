@@ -12,7 +12,7 @@ export default {
       },
     },
     query: {
-      productList: (_, query) => queryList('product', query)
+      productList: (_, args) => queryList('product', args)
     },
   },
 }
