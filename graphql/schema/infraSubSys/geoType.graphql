@@ -10,7 +10,7 @@ type GeoType {
     version:Int
 }
 
-input GeoType {
+input GeoTypeInput {
     parentTypeId:String #上级类型标识
     hasTable:Boolean #有库表否
     description:String
