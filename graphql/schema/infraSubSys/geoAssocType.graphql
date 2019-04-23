@@ -1,27 +1,14 @@
 scalar Date
 
-type  geoAssocType  {
-    geoAssocType_id:ID!
+type GeoAssocType  {
+    geoAssocTypeId:ID!
     description:String
     lastUpdatedStamp:Date
     createdStamp:Date
     version:Int
 }
-type Query {
-    countByExample(example:geoAssocTypeExample):Long
-    selectByPrimaryKey(geoAssocTypeId:String):geoAssocType
-    selectByExample(example:geoAssocTypeExample):[geoAssocType]
-}
 
-
-type Mutation{
-    insert(record:geoAssocType): Int
-    insertSelective(record:geoAssocType): Int
-    updateByPrimaryKey(record:geoAssocType): Int
-    deleteByPrimaryKey(geoAssocTypeId:String):Int
-}
-type geoAssocTypeExample{
-    orderByClause:String
-    distinct:boolean
-    oredCriteria:[Criteria]
+input GeoAssocTypeInput {
+    geoAssocTypeId:ID!
+    description:String
 }

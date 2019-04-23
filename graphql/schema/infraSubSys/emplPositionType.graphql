@@ -1,6 +1,6 @@
 scalar Date
 
-type  emplPositionType  {
+type EmplPositionType {
     emplPositionTypeId:ID! #职位类型
     parentTypeId:String #上级类型
     positionTypeName:String
@@ -10,19 +10,10 @@ type  emplPositionType  {
     createdStamp:Date
     version:Int
 }
-type Query {
-    selectByPrimaryKey(emplPositionTypeId:String):emplPositionType
-    selectByExample(example:emplPositionTypeExample):[emplPositionType]
-    countByExample(example:emplPositionTypeExample):Long
+
+input EmplPositionTypeInput {
+    parentTypeId:String #上级类型
+    positionTypeName:String
+    hasTable:Boolean  #有库表否
+    description:String 
 }
-    type Mutation{
-        insert(record:emplPositionType): Int
-        insertSelective(record:emplPositionType): Int
-        updateByPrimaryKey(record:emplPositionType): Int
-        deleteByPrimaryKey(emplPositionTypeId:String):Int
-    }
-    type emplPositionTypeExample{
-        orderByClause:String
-        distinct:boolean
-        oredCriteria:[Criteria]
-    }

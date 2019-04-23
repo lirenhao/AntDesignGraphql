@@ -1,6 +1,6 @@
 scalar Date
 
-type  uomType  {
+type UomType {
     uomTypeId:ID!  #UOM类型标识
     parentTypeId:String  #上级类型标识
     uomTypeName:String
@@ -11,20 +11,9 @@ type  uomType  {
     version:Int
 }
 
-type Query {
-    countByExample(example:uomTypeExample):Long
-    selectByPrimaryKey(uomTypeId:String):uomType
-    selectByExample(example:uomTypeExample):[uomType]
-}
-
-type Mutation{
-    insert(record:uomType):Int
-    insertSelective(record:uomType): Int
-    updateByPrimaryKey(record:uomType): Int
-    deleteByPrimaryKey(uomTypeId:String):Int
-}
-type uomTypeExample{
-    orderByClause:String
-    distinct:boolean
-    oredCriteria:[Criteria]
+input UomTypeInput {
+    parentTypeId:String  #上级类型标识
+    uomTypeName:String
+    hasTable:Boolean  #是否库表
+    description:String
 }

@@ -1,6 +1,6 @@
 scalar Date
 
-type  responsibilityType  {
+type ResponsibilityType {
     responsibilityTypeId:ID! #职责类型标识
     parentTypeId:String
     responsibilityTypeName:String
@@ -10,20 +10,10 @@ type  responsibilityType  {
     createdStamp:Date
     version:Int
 }
-type Query {
-    countByExample(example:responsibilityTypeExample):Long
-    selectByPrimaryKey(responsibilityTypeId:String):responsibilityType
-    selectByExample(example:responsibilityTypeExample):[responsibilityType]
-}
 
-type Mutation{
-    insert(record:responsibilityType):Int
-    insertSelective(record:responsibilityType): Int
-    updateByPrimaryKey(record:responsibilityType): Int
-    deleteByPrimaryKey(responsibilityTypeId:String):Int
-}
-type responsibilityTypeExample{
-    orderByClause:String
-    distinct:boolean
-    oredCriteria:[Criteria]
+input ResponsibilityTypeInput {
+    parentTypeId:String
+    responsibilityTypeName:String
+    hasTable:Boolean
+    description:String
 }

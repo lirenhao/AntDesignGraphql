@@ -1,6 +1,6 @@
 scalar Date
 
-type  statusType  {
+type StatusType {
     statusTypeId:ID! #状态类型标识
     parentTypeId:String #上级类型标识
     hasTable:String #是否库表
@@ -11,20 +11,9 @@ type  statusType  {
     version:Int
 }
 
-type Query {
-    countByExample(example:statusTypeExample):Long
-    selectByPrimaryKey(statusTypeId:String):statusType
-    selectByExample(example:statusTypeExample):[statusType]
-}
-
-type Mutation{
-    insert(record:statusType):Int
-    insertSelective(record:statusType): Int
-    updateByPrimaryKey(record:statusType): Int
-    deleteByPrimaryKey(statusTypeId:String):Int
-}
-type statusTypeExample{
-    orderByClause:String
-    distinct:boolean
-    oredCriteria:[Criteria]
+input StatusTypeInput {
+    parentTypeId:String #上级类型标识
+    hasTable:String #是否库表
+    description:String
+    isDeletedTag:Boolean
 }

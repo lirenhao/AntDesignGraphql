@@ -1,0 +1,19 @@
+scalar Date
+
+type CommunicationEventPrpType {
+    communicationEventPrpTypeId: ID! #通信事件目的类型标识
+    parentTypeId: String #上级类型标识
+    COMMPRPTYPENAME: String
+    hasTable: Boolean #有库表否
+    description: String #描述
+    lastUpdatedStamp: date
+    createdStamp: date
+    version: Int
+}
+
+input CommunicationEventPrpTypeInput {
+    parentTypeId: String #上级类型标识
+    COMMPRPTYPENAME: String
+    hasTable: Boolean #有库表否
+    description: String #描述
+}

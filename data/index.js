@@ -5,12 +5,12 @@ import moment from 'moment'
 
 const dbFile = path.join(__dirname, 'db.json')
 
-export const queryList = (type, param = {}) => {
+export const queryList = (type, query = {}) => {
   let result = jsonfile.readFile(dbFile)
     .then(db => db[type] || {})
     .then(data => Object.keys(data).map(key => data[key]))
-  Object.keys(param).forEach(key => {
-    result = result.then(list => list.filter(item => item[key] === param[key]))
+  Object.keys(query).forEach(key => {
+    result = result.then(list => list.filter(item => item[key] === query[key]))
   })
   return result
 }

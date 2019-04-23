@@ -1,6 +1,6 @@
 scalar Date
 
-type  rateType  {
+type RateType {
     rateTypeId:ID!
     rateTypeName:String
     description:String
@@ -9,20 +9,7 @@ type  rateType  {
     version:Int
 }
 
-type Query {
-    countByExample(example:rateTypeExample):Long
-    selectByPrimaryKey(rateTypeId:String):rateType
-    selectByExample(example:rateTypeExample):[rateType]
-}
-
-type Mutation{
-    insert(record:rateType): Int
-    insertSelective(record:rateType): Int
-    updateByPrimaryKey(record:rateType): Int
-    deleteByPrimaryKey(rateTypeId:String):Int
-}
-type rateTypeExample{
-    orderByClause:String
-    distinct:boolean
-    oredCriteria:[Criteria]
+input RateTypeInput {
+    rateTypeName:String
+    description:String
 }

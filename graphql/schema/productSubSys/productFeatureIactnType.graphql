@@ -1,6 +1,6 @@
 scalar Date
 
-type  productFeatureIactnType  {
+type ProductFeatureIactnType {
     productFeatureIactnTypeId:ID! #产品特征互操作类型标识
     parentTypeId:String #上级类型
     productFeatureIactnTypeName:String
@@ -11,20 +11,9 @@ type  productFeatureIactnType  {
     version:Int
 }
 
-type Query {
-    countByExample(example:productFeatureIactnTypeExample):Long
-    selectByExample(example:productFeatureIactnTypeExample):[productFeatureIactnType]
-    selectByPrimaryKey(productFeatureIactnTypeId:String):productFeatureIactnType
-}
-
-type Mutation{
-    insert(record:productFeatureIactnType): Int
-    insertSelective(record:productFeatureIactnType): Int
-    updateByPrimaryKey(record:productFeatureIactnType): Int
-    deleteByPrimaryKey(productFeatureIactnTypeId:String):Int
-}
-type productFeatureIactnTypeExample{
-    orderByClause:String
-    distinct:Boolean
-    oredCriteria:[Criteria]
+input ProductFeatureIactnTypeInput {
+    parentTypeId:String #上级类型
+    productFeatureIactnTypeName:String
+    hasTable:Boolean  #有库表否
+    description:String  #描述
 }

@@ -1,10 +1,10 @@
  scalar Date
 
-type  periodType  {
+type PeriodType {
     periodTypeId:ID!
     periodTypeName:String
     description:String
-    periodLength:Date
+    periodLength:String
     uomId:String
     isDeletedTag:Boolean
     lastUpdatedStamp:Date
@@ -12,20 +12,10 @@ type  periodType  {
     version:Int
 }
 
- type Query {
-     countByExample(example:periodTypeExample):Long
-     selectByPrimaryKey(periodTypeId:String):periodType
-     selectByExample(example:periodTypeExample):[periodType]
- }
-
- type Mutation{
-     insert(record:periodType): Int
-     insertSelective(record:periodType): Int
-     updateByPrimaryKey(record:periodType): Int
-     deleteByPrimaryKey(periodTypeId:String):Int
- }
- type periodTypeExample{
-     orderByClause:String
-     distinct:boolean
-     oredCriteria:[Criteria]
- }
+input PeriodTypeInput {
+    periodTypeName:String
+    description:String
+    periodLength:String
+    uomId:String
+    isDeletedTag:Boolean
+}

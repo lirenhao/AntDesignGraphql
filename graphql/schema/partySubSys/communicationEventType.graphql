@@ -1,6 +1,6 @@
 scalar Date
 
-type  communicationEventType  {
+type CommunicationEventType  {
     communicationEventTypeId: ID! #通讯事件类型标识
     parentTypeId: String #上级类型标识
     name: String
@@ -11,19 +11,11 @@ type  communicationEventType  {
     createdStamp: date
     version: Int
 }
-type Query {
-    countByExample(example:communicationEventTypeExample):Long
-    selectByExample(example:communicationEventTypeExample):[communicationEventType]
-    selectByPrimaryKey(communicationEventTypeId:String):communicationEventType
-}
-type Mutation{
-    insert(record:communicationEventType): Int
-    insertSelective(record:communicationEventType): Int
-    updateByPrimaryKey(record:communicationEventType): Int
-    deleteByPrimaryKey(communicationEventTypeId:String):Int
-}
-type communicationEventTypeExample{
-    orderByClause:String
-    distinct:Boolean
-    oredCriteria:[Criteria]
+
+input CommunicationEventType {
+    parentTypeId: String #上级类型标识
+    name: String
+    hasTable: Boolean #有库表吗
+    description: String #描述
+    contactMechTypeId: String #联系机制类型标识
 }

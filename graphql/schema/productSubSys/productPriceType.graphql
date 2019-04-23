@@ -1,6 +1,6 @@
 scalar Date
 
-type  productPriceType  {
+type ProductPriceType  {
     productPriceTypeId:ID! #产品价格类型的标识
     productPriceTypeName:String
     description:String #描述
@@ -9,20 +9,7 @@ type  productPriceType  {
     version:Int
 }
 
-type Query {
-    countByExample(example:productPriceTypeExample):Long
-    selectByExample(example:productPriceTypeExample):[productPriceType]
-    selectByPrimaryKey(productPriceTypeId:String):productPriceType
-}
-
-type Mutation{
-    insert(record:productPriceType): Int
-    insertSelective(record:productPriceType): Int
-    updateByPrimaryKey(record:productPriceType): Int
-    deleteByPrimaryKey(productPriceTypeId:String):Int
-}
-type productPriceTypeExample{
-    orderByClause:String
-    distinct:Boolean
-    oredCriteria:[Criteria]
+input ProductPriceTypeInput {
+    productPriceTypeName:String
+    description:String #描述
 }

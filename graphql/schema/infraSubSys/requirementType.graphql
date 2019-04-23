@@ -1,6 +1,6 @@
 scalar Date
 
-type  requirementType  {
+type RequirementType {
     requirementTypeId:ID!  #需求类型标识
     parentTypeId:String  #上级类型标识
     requirementTypeName:String
@@ -10,20 +10,10 @@ type  requirementType  {
     createdStamp:Date
     version:Int
 }
-type Query {
-    countByExample(example:requirementTypeExample):Long
-    selectByPrimaryKey(requirementTypeId:String):requirementType
-    selectByExample(example:requirementTypeExample):[requirementType]
-}
 
-type Mutation{
-    insert(record:requirementType): Int
-    insertSelective(record:requirementType): Int
-    updateByPrimaryKey(record:requirementType): Int
-    deleteByPrimaryKey(requirementTypeId:String):Int
-}
-type requirementTypeExample{
-    orderByClause:String
-    distinct:boolean
-    oredCriteria:[Criteria]
+input RequirementTypeInput {
+    parentTypeId:String  #上级类型标识
+    requirementTypeName:String
+    hasTable:Boolean  #有库表否
+    description:String
 }

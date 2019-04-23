@@ -1,6 +1,6 @@
 scalar Date
 
-type  enumerationType  {
+type EnumerationType {
     enumTypeId:ID!
     parentTypeId:String #上级标识类型
     enumTypeName:String
@@ -11,21 +11,11 @@ type  enumerationType  {
     createdStamp:Date
     version:Int
 }
-type Query {
-    countByExample(example:enumerationTypeExample):Long
-    selectByPrimaryKey(enumTypeId:String):enumerationType
-    selectByExample(example:enumerationTypeExample):[enumerationType]
-}
 
-
-type Mutation{
-    insert(record:enumerationType): Int
-    insertSelective(record:enumerationType): Int
-    updateByPrimaryKey(record:enumerationType): Int
-    deleteByPrimaryKey(enumTypeId:String):Int
-}
-type enumerationTypeExample{
-    orderByClause:String
-    distinct:boolean
-    oredCriteria:[Criteria]
+input EnumerationTypeInput{
+    parentTypeId:String #上级标识类型
+    enumTypeName:String
+    hasTable:Boolean #是否库表
+    description:String
+    isDeletedTag:Boolean
 }

@@ -1,6 +1,6 @@
 scalar Date
 
-type  quantityBreakType  {
+type QuantityBreakType {
     quantityBreakTypeId:ID! #数量超出类型标识
     quantityBreakTypeName:String
     description:String
@@ -9,20 +9,7 @@ type  quantityBreakType  {
     version:Int
 }
 
-type Query {
-    countByExample(example:quantityBreakTypeExample):Long
-    selectByPrimaryKey(quantityBreakTypeId:String):quantityBreakType
-    selectByExample(example:quantityBreakTypeExample):[quantityBreakType]
-}
-
-type Mutation{
-    insert(record:quantityBreakType): Int
-    insertSelective(record:quantityBreakType): Int
-    updateByPrimaryKey(record:quantityBreakType): Int
-    deleteByPrimaryKey(quantityBreakTypeId:String):Int
-}
-type quantityBreakTypeExample{
-    orderByClause:String
-    distinct:boolean
-    oredCriteria:[Criteria]
+input QuantityBreakTypeInput {
+    quantityBreakTypeName:String
+    description:String
 }

@@ -1,6 +1,6 @@
 scalar Date
 
-type  dataSourceType {
+type DataSourceType {
     dataSourceTypeId:ID!
     parentSourceTypeId:String #上级数据来源类型标识
     dataSourceTypeName:String
@@ -10,19 +10,10 @@ type  dataSourceType {
     createdStamp:Date
     version:Int
 }
-type Query {
-    selectByPrimaryKey(dataSourceTypeId:ID!):dataSourceType
-    selectByExample(example:dataSourceTypeExample):[dataSourceType]
-    countByExample(example:dataSourceTypeExample):Long
+
+input DataSourceTypeInput {
+    parentSourceTypeId:String #上级数据来源类型标识
+    dataSourceTypeName:String
+    description:String
+    isDeletedTag:Boolean
 }
-    type Mutation{
-        insert(record:dataSourceType): Int
-        insertSelective(record:dataSourceType): Int
-        updateByPrimaryKey(record:dataSourceType): Int
-        deleteByPrimaryKey(dataSourceTypeId:String):Int
-    }
-    type dataSourceTypeExample{
-        orderByClause:String
-        distinct:Boolean
-        oredCriteria:[Criteria]
-    }

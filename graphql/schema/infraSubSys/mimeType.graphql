@@ -1,28 +1,15 @@
 scalar Date
 
-type  mimeType  {
+type MimeType {
     mimeTypeId:ID!   #多媒体类型
     mimeTypeName:String
-    description:Boolean
+    description:String
     lastUpdatedStamp:Date
     createdStamp:Date
     version:Int
 }
 
-type Query {
-    countByExample(example:mimeTypeExample):Long
-    selectByPrimaryKey(mimeTypeId:String):geoType
-    selectByExample(example:mimeTypeExample):[geoType]
-}
-
-type Mutation{
-    insert(record:mimeType): Int
-    insertSelective(record:mimeType): Int
-    updateByPrimaryKey(record:mimeType): Int
-    deleteByPrimaryKey(mimeTypeId:String):Int
-}
-type mimeTypeExample{
-    orderByClause:String
-    distinct:boolean
-    oredCriteria:[Criteria]
+input MimeTypeInput {
+    mimeTypeName:String
+    description:String
 }
