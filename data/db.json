@@ -290,37 +290,42 @@
     "1": {
       "productPriceTypeId": "1",
       "description": "基价",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-29 22:11:07",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productPriceTypeName": "基价"
     },
     "2": {
       "productPriceTypeId": "2",
       "description": "折扣成分",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 08:52:36",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productPriceTypeName": "折扣成分"
     },
     "3": {
       "productPriceTypeId": "3",
       "description": "额外收费成分",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 08:52:43",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productPriceTypeName": "额外收费成分"
     },
     "4": {
       "productPriceTypeId": "4",
       "description": "厂商建议价",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 08:52:49",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productPriceTypeName": "厂商建议价"
     },
     "5": {
       "productPriceTypeId": "5",
       "description": "一次性",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 08:52:56",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productPriceTypeName": "一次性"
     }
   },
   "productPricePurpose": {

@@ -1,6 +1,5 @@
 import express from 'express'
 import graphqlHTTP from 'express-graphql'
-import { mergeSchemas } from 'graphql-tools'
 import graphql from './graphql'
 
 const app = express()
