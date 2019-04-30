@@ -93,11 +93,12 @@
     "1": {
       "productAssocTypeId": "1",
       "parentTypeId": "",
-      "hasTable": false,
+      "isTable": false,
       "description": "产品组合包",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 13:36:00",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productAssocTypeName": "产品组合包"
     }
   },
   "productCategoryType": {

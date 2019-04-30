@@ -12,7 +12,7 @@ type ProductAssocType  {
 }
 
 input ProductAssocTypeInput {
-  productAssocTypeId: String  #父类型标识
+  parentTypeId: String  #父类型标识
   productAssocTypeName: String
   isTable: Boolean #有库表
   description: String #简要描述
