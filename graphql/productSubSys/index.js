@@ -2,6 +2,7 @@ import template from '../template'
 import product from './product'
 import productAssoc from './productAssoc'
 import productCategory from './productCategory'
+import productFeature from './productFeature'
 
 const sys = 'productSubSys'
 
@@ -13,7 +14,7 @@ export default [
   // template(sys, 'productCategoryMember', {}),
   // template(sys, 'productCategoryRollup', {}),
   template(sys, 'productCategoryType', {}),
-  template(sys, 'productFeature', {}),
+  template(sys, 'productFeature', productFeature),
   // template(sys, 'productFeatureAppl', {}),
   template(sys, 'productFeatureApplType', {}),
   // template(sys, 'productFeatureIactn', {}),

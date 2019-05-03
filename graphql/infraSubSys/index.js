@@ -36,7 +36,7 @@ export default [
   // template(sys, 'statusItem', {}),
   template(sys, 'statusType', {}),
   // template(sys, 'statusValidChange', {}),
-  // template(sys, 'uom', {}),
+  template(sys, 'uom', {}),
   template(sys, 'uomType', {}),
   // template(sys, 'validResponsibility', {}),
 ]
