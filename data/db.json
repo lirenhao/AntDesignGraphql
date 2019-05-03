@@ -107,27 +107,30 @@
       "parentTypeId": "",
       "hasTable": false,
       "description": " 产品用途类别",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:44:03",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productCategoryTypeName": "产品用途"
     },
     "2": {
       "productCategoryTypeId": "2",
       "parentTypeId": "",
       "hasTable": false,
       "description": " 产品行业类别",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:43:58",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productCategoryTypeName": "产品行业"
     },
     "3": {
       "productCategoryTypeId": "3",
       "parentTypeId": "",
       "hasTable": false,
       "description": " 产品材料类别",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:43:49",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productCategoryTypeName": "产品材料"
     }
   },
   "productFeatureType": {
@@ -136,81 +139,90 @@
       "parentTypeId": "",
       "hasTable": false,
       "description": "产品质量",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:49:07",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureTypeName": "产品质量"
     },
     "2": {
       "productFeatureTypeId": "2",
       "parentTypeId": "",
       "hasTable": false,
       "description": "颜色",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:49:13",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureTypeName": "颜色"
     },
     "3": {
       "productFeatureTypeId": "3",
       "parentTypeId": "",
       "hasTable": false,
       "description": "尺寸（指定数目）",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:49:18",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureTypeName": "尺寸"
     },
     "4": {
       "productFeatureTypeId": "4",
       "parentTypeId": "",
       "hasTable": false,
       "description": "大小",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:49:23",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureTypeName": "大小"
     },
     "5": {
       "productFeatureTypeId": "5",
       "parentTypeId": "",
       "hasTable": false,
       "description": "商标",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:49:27",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureTypeName": "商标"
     },
     "6": {
       "productFeatureTypeId": "6",
       "parentTypeId": "",
       "hasTable": false,
       "description": "软件特征",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:49:31",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureTypeName": "软件特征"
     },
     "7": {
       "productFeatureTypeId": "7",
       "parentTypeId": "",
       "hasTable": false,
       "description": "硬件特征",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:49:35",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureTypeName": "硬件特征"
     },
     "8": {
       "productFeatureTypeId": "8",
       "parentTypeId": "",
       "hasTable": false,
       "description": "付款特征",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:49:39",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureTypeName": "付款特征"
     },
     "9": {
       "productFeatureTypeId": "9",
       "parentTypeId": "",
       "hasTable": false,
       "description": "其他特征",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:49:43",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureTypeName": "其他特征"
     }
   },
   "productFeatureIactnType": {
@@ -219,36 +231,40 @@
       "parentTypeId": "",
       "hasTable": false,
       "description": "不兼容性",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:52:08",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureIactnTypeName": "不兼容性"
     },
     "2": {
       "productFeatureIactnTypeId": "2",
       "parentTypeId": "",
       "hasTable": false,
       "description": "兼容性",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:52:23",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureIactnTypeName": "兼容性"
     },
     "3": {
       "productFeatureIactnTypeId": "3",
       "parentTypeId": "2",
       "hasTable": false,
       "description": "依赖性",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:52:30",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureIactnTypeName": "依赖性"
     },
     "4": {
       "productFeatureIactnTypeId": "4",
       "parentTypeId": "2",
       "hasTable": false,
       "description": "互补性",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:52:37",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureIactnTypeName": "互补性"
     }
   },
   "productFeatureApplType": {
@@ -257,36 +273,40 @@
       "parentTypeId": "",
       "hasTable": false,
       "description": "必备特征",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:55:53",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureApplTypeName": "必备特征"
     },
     "2": {
       "productFeatureApplTypeId": "2",
       "parentTypeId": "",
       "hasTable": false,
       "description": "标准特征",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:55:59",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureApplTypeName": "标准特征"
     },
     "3": {
       "productFeatureApplTypeId": "3",
       "parentTypeId": "",
       "hasTable": false,
       "description": "任选特征",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:56:06",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureApplTypeName": "任选特征"
     },
     "4": {
       "productFeatureApplTypeId": "4",
       "parentTypeId": "",
       "hasTable": false,
       "description": "可选特征",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:56:12",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productFeatureApplTypeName": "可选特征"
     }
   },
   "productPriceType": {
@@ -335,30 +355,34 @@
     "1": {
       "productPricePurposeId": "1",
       "description": "销售",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:08:26",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productPricePurposeName": "销售"
     },
     "2": {
       "productPricePurposeId": "2",
       "description": "采购",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:05:17",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productPricePurposeName": "采购"
     },
     "3": {
       "productPricePurposeId": "3",
       "description": "使用费",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:05:22",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productPricePurposeName": "使用费"
     },
     "4": {
       "productPricePurposeId": "4",
       "description": "重复收费",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 17:05:27",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "productPricePurposeName": "重复收费"
     }
   },
   "partyType": {
@@ -1642,23 +1666,27 @@
       "productTypeId": "1",
       "primaryProductCategoryId": "",
       "manufacturePartyId": "",
-      "salesDiscWhenNotAvail": "",
-      "internalName": "",
+      "salesDiscWhenNotAvail": false,
+      "internalName": "设立",
       "comments": "",
       "productName": "公司新设立",
       "description": "公司新设立",
       "createdByUserLogin": "",
       "updatedByUserLogin": "",
-      "lastUpdatedStamp": "2019-03-17 11:39:38",
+      "lastUpdatedStamp": "2019-04-30 20:19:23",
       "createdStamp": "2019-03-17 10:39:38",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "introductionDate": "2019-04-30T12:19:11.092Z",
+      "releaseDate": "2019-04-30T12:19:12.942Z",
+      "supportDiscontinuationDate": "2019-04-30T12:19:17.139Z",
+      "salesDiscontinuationDate": "2019-04-30T12:19:20.727Z"
     },
     "2": {
       "productId": "2",
       "productTypeId": "2",
       "primaryProductCategoryId": "",
       "manufacturePartyId": "",
-      "salesDiscWhenNotAvail": "",
+      "salesDiscWhenNotAvail": false,
       "internalName": "",
       "comments": "",
       "productName": "公司变更",
@@ -1674,7 +1702,7 @@
       "productTypeId": "3",
       "primaryProductCategoryId": "",
       "manufacturePartyId": "",
-      "salesDiscWhenNotAvail": "",
+      "salesDiscWhenNotAvail": false,
       "internalName": "",
       "comments": "",
       "productName": "国地税报道",
@@ -1690,7 +1718,7 @@
       "productTypeId": "1",
       "primaryProductCategoryId": "",
       "manufacturePartyId": "",
-      "salesDiscWhenNotAvail": "",
+      "salesDiscWhenNotAvail": false,
       "internalName": "",
       "comments": "",
       "productName": "代理记账",
@@ -1700,15 +1728,6 @@
       "lastUpdatedStamp": "2019-03-17 11:39:38",
       "createdStamp": "2019-03-17 10:39:38",
       "version": "v1.0.0"
-    },
-    "CU9RKqADm": {
-      "productName": "test",
-      "productTypeId": "1",
-      "introductionDate": "2019-04-22",
-      "productId": "CU9RKqADm",
-      "lastUpdatedStamp": "2019-04-22 23:03:51",
-      "createdStamp": "2019-04-22 23:03:51",
-      "version": 0
     }
   },
   "productAssoc": {},
