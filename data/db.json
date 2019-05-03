@@ -1673,13 +1673,13 @@
       "description": "公司新设立",
       "createdByUserLogin": "",
       "updatedByUserLogin": "",
-      "lastUpdatedStamp": "2019-04-30 20:19:23",
+      "lastUpdatedStamp": "2019-05-03 11:40:04",
       "createdStamp": "2019-03-17 10:39:38",
       "version": "v1.0.0",
-      "introductionDate": "2019-04-30T12:19:11.092Z",
-      "releaseDate": "2019-04-30T12:19:12.942Z",
-      "supportDiscontinuationDate": "2019-04-30T12:19:17.139Z",
-      "salesDiscontinuationDate": "2019-04-30T12:19:20.727Z"
+      "introductionDate": "2019-04-30",
+      "releaseDate": "2019-04-30",
+      "supportDiscontinuationDate": "2019-04-30",
+      "salesDiscontinuationDate": "2019-04-30"
     },
     "2": {
       "productId": "2",

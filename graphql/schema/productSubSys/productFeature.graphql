@@ -1,34 +1,40 @@
+# import ProductFeatureType from 'productFeatureType.graphql'
+# import Uom from '../infraSubSys/uom.graphql'
+
 scalar Date
 
-type  productFeature  {
-    productFeatureId:ID! #产品特征标识
-    productFeatureTypeId:String #产品特征类型标识
-    productFeatureCategoryId:String #产品特征类别标识
-    description:String #描述
-    uomId:String #计量标识
-    numberSpecified:Float
-    defaultAmount:Float
-    defaultSequenceNum:Float
-    abbrev:String
-    idCode:String
-    lastUpdatedStamp:Date
-    createdStamp:Date
-    version:Int
-}
-type Query {
-    countByExample(example:productFeatureExample):Long
-    selectByExample(example:productFeatureExample):[productFeature]
-    selectByPrimaryKey(productFeatureId:String):productFeature
+type ProductFeature {
+    productFeatureId: ID! #产品特征标识
+    productFeatureTypeId: String #产品特征类型标识
+    productFeatureCategoryId: String #产品特征类别标识
+    description: String #描述
+    uomId: String #计量标识
+    numberSpecified: Float
+    defaultAmount: Float
+    defaultSequenceNum: Float
+    abbrev: String
+    idCode: String
+    lastUpdatedStamp: Date
+    createdStamp: Date
+    version: Int
+
+    productFeatureType: ProductFeatureType
+    uom: Uom
 }
 
-type Mutation{
-    insert(record:productFeature): Int
-    insertSelective(record:productFeature): Int
-    updateByPrimaryKey(record:productFeature): Int
-    deleteByPrimaryKey(productFeatureId:String):Int
+extend type ProductFeature {
+    productFeatureType: ProductFeatureType
+    uom: Uom
 }
-type productFeatureExample{
-    orderByClause:String
-    distinct:Boolean
-    oredCriteria:[Criteria]
+
+input ProductFeatureInput {
+    productFeatureTypeId: String #产品特征类型标识
+    productFeatureCategoryId: String #产品特征类别标识
+    description: String #描述
+    uomId: String #计量标识
+    numberSpecified: Float
+    defaultAmount: Float
+    defaultSequenceNum: Float
+    abbrev: String
+    idCode: String
 }

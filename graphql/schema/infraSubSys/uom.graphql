@@ -1,30 +1,23 @@
+# import UomType from 'uomType.graphql'
+
 scalar Date
 
-type  uom  {
+type Uom {
     uomId:ID! #UOM标识
-    uomTypeId:String   #UOM类型标识
+    uomTypeId:String #UOM类型标识
     uomName:String
     abbreviation:String #缩写
     description:String
     lastUpdatedStamp:Date
     createdStamp:Date
     version:Int
+
+    uomType: UomType
 }
 
-type Query {
-    countByExample(example:uomExample):Long
-    selectByPrimaryKey(uomId:String):uom
-    selectByExample(example:uomExample):[uom]
-}
-
-type Mutation{
-    insert(record:uom):Int
-    insertSelective(record:uom): Int
-    updateByPrimaryKey(record:uom): Int
-    deleteByPrimaryKey(uomId:String):Int
-}
-type uomExample{
-    orderByClause:String
-    distinct:boolean
-    oredCriteria:[Criteria]
+input UomInput {
+    uomTypeId:String #UOM类型标识
+    uomName:String
+    abbreviation:String #缩写
+    description:String #描述
 }

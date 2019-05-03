@@ -13,7 +13,7 @@ export default [
   // template(sys, 'productCategoryMember', {}),
   // template(sys, 'productCategoryRollup', {}),
   template(sys, 'productCategoryType', {}),
-  // template(sys, 'productFeature', {}),
+  template(sys, 'productFeature', {}),
   // template(sys, 'productFeatureAppl', {}),
   template(sys, 'productFeatureApplType', {}),
   // template(sys, 'productFeatureIactn', {}),

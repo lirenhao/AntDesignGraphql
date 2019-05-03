@@ -4,7 +4,7 @@ export default {
   resolversSupp: {
     resolver: {
       ProductCategory: {
-        productCategoryType: ({ productCategoryId: id }) => queryById('productCategoryType', id),
+        productCategoryType: ({ productCategoryTypeId: id }) => queryById('productCategoryType', id),
       },
     }
   },
