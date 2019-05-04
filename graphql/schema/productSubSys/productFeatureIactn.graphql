@@ -10,23 +10,12 @@ type  productFeatureIactn  {
     version:Int
 }
 
-type Query {
-    countByExample(example:productFeatureIactnExample):Long
-    selectByExample(example:productFeatureIactnExample):[productFeatureIactn]
-    selectByPrimaryKey(key:productFeatureIactnKey):productFeatureIactn
-}
-
-type Mutation{
-    insert(record:productFeatureIactn): Int
-    insertSelective(record:productFeatureIactn): Int
-    updateByPrimaryKey(record:productFeatureIactn): Int
-    deleteByPrimaryKey(key:productFeatureIactnKey):Int
-}
-type productFeatureIactnExample{
+input ProductFeatureIactnInput{
     orderByClause:String
     distinct:Boolean
     oredCriteria:[Criteria]
 }
+
 type productFeatureIactnKey{
     productId:String
     productFeatureId:String

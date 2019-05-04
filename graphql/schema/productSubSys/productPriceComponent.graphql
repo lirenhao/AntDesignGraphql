@@ -26,8 +26,8 @@ type  productPriceComponent  {
     version:Int
 }
 type Query {
-    countByExample(example:productPriceComponentExample):Long
-    selectByExample(example:productPriceComponentExample):[productPriceComponent]
+    countByInput(example:productPriceComponentInput):Long
+    selectByInput(example:productPriceComponentInput):[productPriceComponent]
     selectByPrimaryKey(priceComponentId:String):productPriceComponent
 }
 
@@ -37,7 +37,7 @@ type Mutation{
     updateByPrimaryKey(record:productPriceComponent): Int
     deleteByPrimaryKey(priceComponentId:String):Int
 }
-type productPriceComponentExample{
+type productPriceComponentInput{
     orderByClause:String
     distinct:Boolean
     oredCriteria:[Criteria]

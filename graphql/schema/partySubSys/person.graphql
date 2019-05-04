@@ -33,8 +33,8 @@ type  person  {
 }
 
 type Query {
-    countByExample(example:personExample):Long
-    selectByExample(example:personExample):[person]
+    countByInput(example:personInput):Long
+    selectByInput(example:personInput):[person]
     selectByPrimaryKey(partyId:String):person
 }
 
@@ -44,7 +44,7 @@ type Mutation{
     updateByPrimaryKey(record:person): Int
     deleteByPrimaryKey(partyId:String):Int
 }
-type personExample{
+type personInput{
     orderByClause:String
     distinct:Boolean
     oredCriteria:[Criteria]

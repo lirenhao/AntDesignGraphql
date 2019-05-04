@@ -9,8 +9,8 @@ type  contactMech  {
     version: Int
 }
 type Query {
-    countByExample(example:contactMechExample):Long
-    selectByExample(example:contactMechExample):[contactMech]
+    countByInput(example:contactMechInput):Long
+    selectByInput(example:contactMechInput):[contactMech]
     selectByPrimaryKey(contactMechId:String):contactMech
 }
 type Mutation{
@@ -19,7 +19,7 @@ type Mutation{
     updateByPrimaryKey(record:contactMech): Int
     deleteByPrimaryKey(contactMechId:String):Int
 }
-type contactMechExample{
+type contactMechInput{
     orderByClause:String
     distinct:Boolean
     oredCriteria:[Criteria]

@@ -13,8 +13,8 @@ type  emplPositionReportingStruct  {
 }
 type Query {
      selectByPrimaryKey(key:emplPositionReportingStructKey):emplPosition
-    selectByExample(example:emplPositionReportingStructExample):[emplPosition]
-    countByExample(example:emplPositionReportingStructExample):Long
+    selectByInput(example:emplPositionReportingStructInput):[emplPosition]
+    countByInput(example:emplPositionReportingStructInput):Long
 }
     type Mutation{
         insert(record:emplPositionReportingStruct): Int
@@ -22,7 +22,7 @@ type Query {
         updateByPrimaryKey(record:emplPositionFulfillment): Int
         deleteByPrimaryKey(key:emplPositionReportingStructKey):Int
     }
-    type emplPositionReportingStructExample{
+    type emplPositionReportingStructInput{
         orderByClause:String
         distinct:boolean
         oredCriteria:[Criteria]

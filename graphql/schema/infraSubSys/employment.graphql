@@ -16,8 +16,8 @@ type  employment  {
 
 type Query {
     selectByPrimaryKey(key:employmentKey):deliverableType
-    selectByExample(example:employmentExample):[employment]
-    countByExample(example:employmentExample):Long
+    selectByInput(example:employmentInput):[employment]
+    countByInput(example:employmentInput):Long
 }
     type Mutation{
         insert(record:employment): Int
@@ -25,7 +25,7 @@ type Query {
         updateByPrimaryKey(record:employment): Int
         deleteByPrimaryKey(key:employmentKey):Int
     }
-    type deliverableTypeExample{
+    type deliverableTypeInput{
         orderByClause:String
         distinct:Boolean
         oredCriteria:[Criteria]

@@ -12,9 +12,9 @@ type  statusItem  {
     version:Int
 }
 type Query {
-    countByExample(example:statusItemExample):Long
+    countByInput(example:statusItemInput):Long
     selectByPrimaryKey(statusId:String):statusItem
-    selectByExample(example:statusItemExample):[statusItem]
+    selectByInput(example:statusItemInput):[statusItem]
 }
 
 type Mutation{
@@ -23,7 +23,7 @@ type Mutation{
     updateByPrimaryKey(record:statusItem): Int
     deleteByPrimaryKey(statusId:String):Int
 }
-type statusItemExample{
+type statusItemInput{
     orderByClause:String
     distinct:boolean
     oredCriteria:[Criteria]

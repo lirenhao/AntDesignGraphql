@@ -1,38 +1,46 @@
+# import Product from 'product.graphql'
+# import ProductFeature from 'productFeature.graphql'
+# import ProductFeatureApplType from 'productFeatureApplType.graphql'
+
 scalar Date
 
-type  productFeatureAppl  {
-    productId:ID! #产品标识
-    productFeatureId:String #产品特征标识
-    productFeatureApplTypeId:String #产品特征适用性类型标识
-    fromDate:Date #起始日期
-    thruDate:Date #终止日期
-    sequenceNum:Float
-    amount:Float
-    recurring_amount:Float
-    lastUpdatedStamp:Date
-    createdStamp:Date
-    version:Int
+type ProductFeatureAppl {
+    productId: String #产品标识
+    productFeatureId: String #产品特征标识
+    productFeatureApplTypeId: String #产品特征适用性类型标识
+    fromDate: Date #起始日期
+    thruDate: Date #终止日期
+    sequenceNum: Float
+    amount: Float
+    recurringAmount: Float
+    lastUpdatedStamp: Date
+    createdStamp: Date
+    version: Int
+
+    product: Product
+    productFeature: ProductFeature
+    productFeatureApplType: ProductFeatureApplType
 }
 
-type Query {
-    countByExample(example:productFeatureApplExample):Long
-    selectByExample(example:productFeatureApplExample):[productFeatureAppl]
-    selectByPrimaryKey(key:productFeatureApplKey):productFeatureAppl
+extend type ProductFeatureAppl {
+    product: Product
+    productFeature: ProductFeature
+    productFeatureApplType: ProductFeatureApplType
 }
 
-type Mutation{
-    insert(record:productFeatureAppl): Int
-    insertSelective(record:productFeatureAppl): Int
-    updateByPrimaryKey(record:productFeatureAppl): Int
-    deleteByPrimaryKey(key:productFeatureApplKey):Int
+input ProductFeatureApplInput {
+    productId: String #产品标识
+    productFeatureId: String #产品特征标识
+    productFeatureApplTypeId: String #产品特征适用性类型标识
+    fromDate: Date #起始日期
+    thruDate: Date #终止日期
+    sequenceNum: Float
+    amount: Float
+    recurringAmount: Float
 }
-type productFeatureApplExample{
-    orderByClause:String
-    distinct:Boolean
-    oredCriteria:[Criteria]
-}
-type productFeatureApplKey{
-    productId:String
-    productFeatureId:String
-    fromDate:Date
+
+type ProductFeatureApplKey {
+    productId: String
+    productFeatureId: String
+    fromDate: Date
 }

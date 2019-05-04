@@ -13,9 +13,9 @@ type  quantityBreak  {
 }
 
 type Query {
-    countByExample(example:quantityBreakExample):Long
+    countByInput(example:quantityBreakInput):Long
     selectByPrimaryKey(quantityBreakId:String):quantityBreak
-    selectByExample(example:quantityBreakExample):[quantityBreak]
+    selectByInput(example:quantityBreakInput):[quantityBreak]
 }
 
 type Mutation{
@@ -24,7 +24,7 @@ type Mutation{
     updateByPrimaryKey(record:quantityBreak): Int
     deleteByPrimaryKey(quantityBreakId:String):Int
 }
-type quantityBreakExample{
+type quantityBreakInput{
     orderByClause:String
     distinct:boolean
     oredCriteria:[Criteria]

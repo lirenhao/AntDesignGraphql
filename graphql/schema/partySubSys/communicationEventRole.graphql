@@ -11,8 +11,8 @@ type  communicationEventRole  {
     version: Int
 }
 type Query {
-    countByExample(example:communicationEventRoleExample):Long
-    selectByExample(example:communicationEventRoleExample):[communicationEventRole]
+    countByInput(example:communicationEventRoleInput):Long
+    selectByInput(example:communicationEventRoleInput):[communicationEventRole]
     selectByPrimaryKey(key:communicationEventRoleKey):communicationEventRole
 }
 type Mutation{
@@ -21,7 +21,7 @@ type Mutation{
     updateByPrimaryKey(record:communicationEventRole): Int
     deleteByPrimaryKey(key:communicationEventRoleKey):Int
 }
-type communicationEventRoleExample{
+type communicationEventRoleInput{
     orderByClause:String
     distinct:Boolean
     oredCriteria:[Criteria]

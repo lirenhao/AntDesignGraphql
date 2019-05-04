@@ -11,9 +11,9 @@ type  statusValidChange  {
 }
 
 type Query {
-    countByExample(example:statusValidChangeExample):Long
+    countByInput(example:statusValidChangeInput):Long
     selectByPrimaryKey(key:statusValidChangeKey):statusValidChange
-    selectByExample(example:statusValidChangeExample):[statusValidChange]
+    selectByInput(example:statusValidChangeInput):[statusValidChange]
 }
 
 type Mutation{
@@ -22,7 +22,7 @@ type Mutation{
     updateByPrimaryKey(record:statusValidChange): Int
     deleteByPrimaryKey(key:statusValidChangeKey):Int
 }
-type statusValidChangeExample{
+type statusValidChangeInput{
     orderByClause:String
     distinct:boolean
     oredCriteria:[Criteria]

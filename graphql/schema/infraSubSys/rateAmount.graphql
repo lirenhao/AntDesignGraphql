@@ -16,9 +16,9 @@ type  rateAmount  {
 }
 
 type Query {
-    countByExample(example:rateAmountExample):Long
+    countByInput(example:rateAmountInput):Long
     selectByPrimaryKey(key:rateAmountKey):rateAmount
-    selectByExample(example:rateAmountExample):[rateAmount]
+    selectByInput(example:rateAmountInput):[rateAmount]
 }
 
 type Mutation{
@@ -27,7 +27,7 @@ type Mutation{
     updateByPrimaryKey(record:rateAmount): Int
     deleteByPrimaryKey(key:rateAmountKey):Int
 }
-type rateAmountExample{
+type rateAmountInput{
     orderByClause:String
     distinct:boolean
     oredCriteria:[Criteria]

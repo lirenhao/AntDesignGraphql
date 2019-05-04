@@ -25,8 +25,8 @@ type  postalAddress  {
 }
 
 type Query {
-    countByExample(example:postalAddressExample):Long
-    selectByExample(example:postalAddressExample):[postalAddress]
+    countByInput(example:postalAddressInput):Long
+    selectByInput(example:postalAddressInput):[postalAddress]
     selectByPrimaryKey(contactMechId:String):postalAddress
 }
 
@@ -36,7 +36,7 @@ type Mutation{
     updateByPrimaryKey(record:postalAddress): Int
     deleteByPrimaryKey(contactMechId:String):Int
 }
-type postalAddressExample{
+type postalAddressInput{
     orderByClause:String
     distinct:Boolean
     oredCriteria:[Criteria]

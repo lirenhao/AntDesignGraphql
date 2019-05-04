@@ -21,8 +21,8 @@ type  emplPosition  {
 }
     type Query {
     selectByPrimaryKey(emplPositionId:ID!):emplPosition
-    selectByExample(example:emplPositionExample):[emplPosition]
-    countByExample(example:emplPositionExample):Long
+    selectByInput(example:emplPositionInput):[emplPosition]
+    countByInput(example:emplPositionInput):Long
 }
     type Mutation{
         insert(record:emplPosition): Int
@@ -30,7 +30,7 @@ type  emplPosition  {
         updateByPrimaryKey(record:emplPosition): Int
         deleteByPrimaryKey(emplPositionId:String):Int
     }
-    type emplPositionExample{
+    type emplPositionInput{
         orderByClause:String
         distinct:boolean
         oredCriteria:[Criteria]

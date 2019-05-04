@@ -9,8 +9,8 @@ type  partyRole  {
     version:Int
 }
 type Query {
-    countByExample(example:partyRoleExample):Long
-    selectByExample(example:partyRoleExample):[partyRole]
+    countByInput(example:partyRoleInput):Long
+    selectByInput(example:partyRoleInput):[partyRole]
     selectByPrimaryKey(key:partyRoleKey):partyRole
 }
 
@@ -20,7 +20,7 @@ type Mutation{
     updateByPrimaryKey(record:partyRole): Int
     deleteByPrimaryKey(key:partyRoleKey):Int
 }
-type partyRoleExample{
+type partyRoleInput{
     orderByClause:String
     distinct:Boolean
     oredCriteria:[Criteria]

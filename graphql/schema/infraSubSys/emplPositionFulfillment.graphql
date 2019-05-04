@@ -11,8 +11,8 @@ type  emplPositionFulfillment  {
 }
 type Query {
     selectByPrimaryKey(key:emplPositionFulfillmentKey):emplPositionFulfillment
-    selectByExample(example:emplPositionFulfillmentExample):[emplPositionFulfillment]
-    countByExample(example:emplPositionFulfillmentExample):Long
+    selectByInput(example:emplPositionFulfillmentInput):[emplPositionFulfillment]
+    countByInput(example:emplPositionFulfillmentInput):Long
 }
     type Mutation{
         insert(record:emplPositionFulfillment): Int
@@ -20,7 +20,7 @@ type Query {
         updateByPrimaryKey(record:emplPositionFulfillment): Int
         deleteByPrimaryKey(key:emplPositionFulfillmentKey):Int
     }
-    type emplPositionFulfillmentExample{
+    type emplPositionFulfillmentInput{
         orderByClause:String
         distinct:boolean
         oredCriteria:[Criteria]

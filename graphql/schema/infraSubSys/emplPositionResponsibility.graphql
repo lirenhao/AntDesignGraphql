@@ -12,8 +12,8 @@ type  emplPositionResponsibility  {
 }
 type Query {
     selectByPrimaryKey(key:emplPositionResponsibilityKey):emplPositionResponsibility
-    selectByExample(example:emplPositionResponsibilityExample):[emplPositionResponsibility]
-    countByExample(example:emplPositionResponsibilityExample):Long
+    selectByInput(example:emplPositionResponsibilityInput):[emplPositionResponsibility]
+    countByInput(example:emplPositionResponsibilityInput):Long
 }
     type Mutation{
         insert(record:emplPositionResponsibility): Int
@@ -21,7 +21,7 @@ type Query {
         updateByPrimaryKey(record:emplPositionResponsibility): Int
        deleteByPrimaryKey(key:emplPositionResponsibilityKey):Int
     }
-    type emplPositionResponsibilityExample{
+    type emplPositionResponsibilityInput{
         orderByClause:String
         distinct:boolean
         oredCriteria:[Criteria]

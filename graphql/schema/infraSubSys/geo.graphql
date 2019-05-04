@@ -14,9 +14,9 @@ type  geo  {
 }
 
 type Query {
-    countByExample(example:geoExample):Long
+    countByInput(example:geoInput):Long
     selectByPrimaryKey(geoId:String):enumerationType
-    selectByExample(example:geoExample):[enumerationType]
+    selectByInput(example:geoInput):[enumerationType]
 }
 
 
@@ -26,7 +26,7 @@ type Mutation{
     updateByPrimaryKey(record:geo): Int
     deleteByPrimaryKey(geoId:String):Int
 }
-type geoExample{
+type geoInput{
     orderByClause:String
     distinct:boolean
     oredCriteria:[Criteria]

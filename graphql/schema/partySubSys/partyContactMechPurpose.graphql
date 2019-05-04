@@ -12,8 +12,8 @@ type  partyContactMechPurpose  {
 }
 
 type Query {
-    countByExample(example:partyContactMechPurposeExample):Long
-    selectByExample(example:partyContactMechPurposeExample):[partyContactMechPurpose]
+    countByInput(example:partyContactMechPurposeInput):Long
+    selectByInput(example:partyContactMechPurposeInput):[partyContactMechPurpose]
     selectByPrimaryKey(key:partyContactMechPurposeKey):partyContactMechPurpose
 }
 type Mutation{
@@ -22,7 +22,7 @@ type Mutation{
     updateByPrimaryKey(record:partyContactMechPurpose): Int
     deleteByPrimaryKey(key:partyContactMechPurposeKey):Int
 }
-type partyContactMechPurposeExample{
+type partyContactMechPurposeInput{
     orderByClause:String
     distinct:Boolean
     oredCriteria:[Criteria]

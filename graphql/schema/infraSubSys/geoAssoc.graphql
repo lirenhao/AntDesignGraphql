@@ -9,9 +9,9 @@ type  geoAssoc  {
     version:Int
 }
 type Query {
-    countByExample(example:geoAssocExample):Long
+    countByInput(example:geoAssocInput):Long
     selectByPrimaryKey(key:geoAssocKey):geoAssoc
-    selectByExample(example:geoAssocExample):[geoAssoc]
+    selectByInput(example:geoAssocInput):[geoAssoc]
 }
 
 
@@ -21,7 +21,7 @@ type Mutation{
     updateByPrimaryKey(record:geoAssoc): Int
     deleteByPrimaryKey(key:geoAssocKey):Int
 }
-type geoAssocExample{
+type geoAssocInput{
     orderByClause:String
     distinct:boolean
     oredCriteria:[Criteria]

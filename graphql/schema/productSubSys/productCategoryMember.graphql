@@ -1,37 +1,41 @@
+# import ProductCategory from 'productCategory.graphql'
+# import Product from 'product.graphql'
+
 scalar Date
 
-type  productCategoryMember  {
-    productCategoryId:ID! #产品类别标识
-    productId:String #产品标识
-    fromDate:Date #起始日期
-    thruDate:Date #终止日期
-    comments:String #注释
-    sequenceNum:Float #序号数字
-    quantity:Float #数量
-    lastUpdatedStamp:Date
-    createdStamp:Date
-    version:Int
+type ProductCategoryMember {
+    productCategoryId: String #产品类别标识
+    productId: String #产品标识
+    fromDate: Date #起始日期
+    thruDate: Date #终止日期
+    comments: String #注释
+    sequenceNum: Float #序号数字
+    quantity: Float #数量
+    lastUpdatedStamp: Date
+    createdStamp: Date
+    version: Int
+
+    productCategory: ProductCategory
+    product: Product
 }
 
-type Query {
-    countByExample(example:productCategoryMemberExample):Long
-    selectByExample(example:productCategoryMemberExample):[productCategoryMember]
-    selectByPrimaryKey(key:productCategoryMemberKey):productCategoryMember
+extend type ProductCategoryMember {
+    productCategory: ProductCategory
+    product: Product
 }
 
-type Mutation{
-    insert(record:productCategoryMember): Int
-    insertSelective(record:productCategoryMember): Int
-    updateByPrimaryKey(record:productCategoryMember): Int
-    deleteByPrimaryKey(key:productCategoryMemberKey):Int
+input ProductCategoryMemberInput{
+    productCategoryId: String #产品类别标识
+    productId: String #产品标识
+    fromDate: Date #起始日期
+    thruDate: Date #终止日期
+    comments: String #注释
+    sequenceNum: Float #序号数字
+    quantity: Float #数量
 }
-type productCategoryMemberExample{
-    orderByClause:String
-    distinct:Boolean
-    oredCriteria:[Criteria]
-}
+
 type productCategoryMemberKey{
-    productCategoryId:String
-    productId:String
-    fromDate:Date
+    productCategoryId: String
+    productId: String
+    fromDate: Date
 }

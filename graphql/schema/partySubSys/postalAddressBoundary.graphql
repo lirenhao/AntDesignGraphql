@@ -10,8 +10,8 @@ type  postalAddressBoundary  {
 }
 
 type Query {
-    countByExample(example:postalAddressBoundaryExample):Long
-    selectByExample(example:postalAddressBoundaryExample):[postalAddressBoundary]
+    countByInput(example:postalAddressBoundaryInput):Long
+    selectByInput(example:postalAddressBoundaryInput):[postalAddressBoundary]
     selectByPrimaryKey(key:postalAddressBoundaryKey):postalAddressBoundary
 }
 
@@ -21,7 +21,7 @@ type Mutation{
     updateByPrimaryKey(record:postalAddressBoundary): Int
     deleteByPrimaryKey(key:postalAddressBoundaryKey):Int
 }
-type postalAddressBoundaryExample{
+type postalAddressBoundaryInput{
     orderByClause:String
     distinct:Boolean
     oredCriteria:[Criteria]

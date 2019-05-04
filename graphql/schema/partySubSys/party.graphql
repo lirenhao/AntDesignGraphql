@@ -18,8 +18,8 @@ type  party  {
 }
 
 type Query {
-  countByExample(example:partyExample):Long
-  selectByExample(example:partyExample):[party]
+  countByInput(example:partyInput):Long
+  selectByInput(example:partyInput):[party]
   selectByPrimaryKey(partyId:String):party
 }
 type Mutation{
@@ -28,7 +28,7 @@ type Mutation{
   updateByPrimaryKey(record:party): Int
   deleteByPrimaryKey(partyId:String):Int
 }
-type partyExample{
+type partyInput{
   orderByClause:String
   distinct:Boolean
   oredCriteria:[Criteria]

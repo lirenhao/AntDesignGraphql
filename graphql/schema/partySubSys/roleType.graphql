@@ -12,8 +12,8 @@ type  roleType {
 }
 
 type Query {
-    countByExample(example:roleTypeExample):Long
-    selectByExample(example:roleTypeExample):[roleType]
+    countByInput(example:roleTypeInput):Long
+    selectByInput(example:roleTypeInput):[roleType]
     selectByPrimaryKey(roleTypeId:String):roleType
 }
 
@@ -23,7 +23,7 @@ type Mutation{
     updateByPrimaryKey(record:roleType): Int
     deleteByPrimaryKey(roleTypeId:String):Int
 }
-type roleTypeExample{
+type roleTypeInput{
     orderByClause:String
     distinct:Boolean
     oredCriteria:[Criteria]

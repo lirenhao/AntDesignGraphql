@@ -33,8 +33,8 @@ type  communicationEvent  {
         version: Int
 }
 type Query {
-        countByExample(example:communicationEventExample):Long
-        selectByExample(example:communicationEventExample):[communicationEvent]
+        countByInput(example:communicationEventInput):Long
+        selectByInput(example:communicationEventInput):[communicationEvent]
         selectByPrimaryKey(communicationEventId:ID!):communicationEvent
 }
 type Mutation{
@@ -43,7 +43,7 @@ type Mutation{
         updateByPrimaryKey(record:communicationEvent): Int
         deleteByPrimaryKey(communicationEventId:String):Int
 }
-type communicationEventExample{
+type communicationEventInput{
         orderByClause:String
         distinct:Boolean
         oredCriteria:[Criteria]

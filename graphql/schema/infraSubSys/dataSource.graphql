@@ -12,8 +12,8 @@ type  dataSource {
 }
 type Query {
     selectByPrimaryKey(dataSourceId:ID!):dataSource
-    selectByExample(example:dataSourceExample):[dataSource]
-    countByExample(example:dataSourceExample):Long
+    selectByInput(example:dataSourceInput):[dataSource]
+    countByInput(example:dataSourceInput):Long
 }
 type Mutation{
     insert(record:dataSource): Int
@@ -21,7 +21,7 @@ type Mutation{
     updateByPrimaryKey(record:dataSource): Int
     deleteByPrimaryKey(dataSourceId:String):Int
     }
-type dataSourceExample{
+type dataSourceInput{
     orderByClause:String
     distinct:Boolean
     oredCriteria:[Criteria]

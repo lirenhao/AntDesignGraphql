@@ -12,9 +12,9 @@ type  enumeration  {
     version:Int
 }
     type Query {
-        countByExample(example:enumerationExample):Long
+        countByInput(example:enumerationInput):Long
         selectByPrimaryKey(enumId:String):enumeration
-        selectByExample(example:enumerationExample):[enumeration]
+        selectByInput(example:enumerationInput):[enumeration]
     }
 
 
@@ -24,7 +24,7 @@ type  enumeration  {
         updateByPrimaryKey(record:enumeration): Int
         deleteByPrimaryKey(enumId:String):Int
     }
-    type enumerationExample{
+    type enumerationInput{
         orderByClause:String
         distinct:boolean
         oredCriteria:[Criteria]

@@ -11,8 +11,8 @@ type  telecomNumber {
 }
 
 type Query {
-    countByExample(example:telecomNumberExample):Long
-    selectByExample(example:telecomNumberExample):[telecomNumber]
+    countByInput(example:telecomNumberInput):Long
+    selectByInput(example:telecomNumberInput):[telecomNumber]
     selectByPrimaryKey(contactMechId:String):telecomNumber
 }
 
@@ -22,7 +22,7 @@ type Mutation{
     updateByPrimaryKey(record:telecomNumber): Int
     deleteByPrimaryKey(contactMechId:String):Int
 }
-type telecomNumberExample{
+type telecomNumberInput{
     orderByClause:String
     distinct:Boolean
     oredCriteria:[Criteria]
