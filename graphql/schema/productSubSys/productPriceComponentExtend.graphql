@@ -1,7 +1,10 @@
+# import ProductPriceComponent from 'productPriceComponent.graphql'
+# import ProductFeature from 'productFeature.graphql'
+
 scalar Date
 
-type  productPriceComponentExtend  {
-    productPriceComponentId:ID!
+type ProductPriceComponentExtend {
+    productPriceComponentId:String
     productFeatureId:String
     sequenceNum:Int
     description:String
@@ -10,25 +13,21 @@ type  productPriceComponentExtend  {
     createdStamp:Date
     version:Int
 }
-type Query {
-    countByInput(example:productPriceComponentExtendInput):Long
-    selectByInput(example:productPriceComponentExtendInput):[productPriceComponentExtend]
-    selectByPrimaryKey(key:productPriceComponentExtendKey):productPriceComponentExtend
+
+extend type ProductPriceComponent {
+    productPriceComponent: ProductPriceComponent
+    productFeature: ProductFeature
 }
 
-type Mutation{
-    insert(record:productPriceComponentExtend): Int
-    insertSelective(record:productPriceComponentExtend): Int
-    updateByPrimaryKey(record:productPriceComponentExtend): Int
-    deleteByPrimaryKey(key:productPriceComponentExtendKey):Int
-}
-type productPriceComponentExtendInput{
-    orderByClause:String
-    distinct:Boolean
-    oredCriteria:[Criteria]
-}
-type productPriceComponentExtendKey{
+input ProductPriceComponentExtendInput {
     productPriceComponentId:String
     productFeatureId:String
+    sequenceNum:Int
+    description:String
+    changedByUserLogin:String
+}
 
+type ProductPriceComponentExtendKey {
+    productPriceComponentId:String
+    productFeatureId:String
 }

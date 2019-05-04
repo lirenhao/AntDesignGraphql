@@ -1,40 +1,51 @@
+# import ProductFeature from 'productFeature.graphql'
+# import ProductPriceType from 'productPriceType.graphql'
+# import Uom from '..infraSubSys/uom.graphql'
+
 scalar Date
 
-type  productFeaturePrice  {
-    productFeatureId:ID! #产品特征标识
-    productPriceTypeId:String #产品价格类型标识
-    currencyUomId:String #货币度量标识
-    fromDate:Date #起始日期
-    thruDate:Date #终止日期
-    price:Float #价格
-    createdDate:Date #创建日期
-    createdByUserLogin:String
-    lastModifiedDate:Date #创建者
-    lastModifiedByUserLogin:String #上次修改日期
-    lastUpdatedStamp:Date #上次修改者
-    createdStamp:Date
-    version:Int
-}
-type Query {
-    countByInput(example:productFeaturePriceInput):Long
-    selectByInput(example:productFeaturePriceInput):[productFeaturePrice]
-    selectByPrimaryKey(key:productFeaturePriceKey):productFeaturePrice
+type ProductFeaturePrice {
+    productFeatureId: String #产品特征标识
+    productPriceTypeId: String #产品价格类型标识
+    currencyUomId: String #货币度量标识
+    fromDate: Date #起始日期
+    thruDate: Date #终止日期
+    price: Float #价格
+    createdDate: Date #创建日期
+    createdByUserLogin: String
+    lastModifiedDate: Date #创建者
+    lastModifiedByUserLogin: String #上次修改者
+    lastUpdatedStamp: Date #上次修改日期
+    createdStamp: Date
+    version: Int
+
+    productFeature: ProductFeature
+    productPriceType: ProductFeature
+    currencyUom: Uom
 }
 
-type Mutation{
-    insert(record:productFeaturePrice): Int
-    insertSelective(record:productFeaturePrice): Int
-    updateByPrimaryKey(record:productFeaturePrice): Int
-    deleteByPrimaryKey(key:productFeaturePriceKey):Int
+extend type ProductFeaturePrice {
+    productFeature: ProductFeature
+    productPriceType: ProductFeature
+    currencyUom: Uom
 }
-type productFeaturePriceInput{
-    orderByClause:String
-    distinct:Boolean
-    oredCriteria:[Criteria]
+
+input ProductFeaturePriceInput {
+    productFeatureId: String #产品特征标识
+    productPriceTypeId: String #产品价格类型标识
+    currencyUomId: String #货币度量标识
+    fromDate: Date #起始日期
+    thruDate: Date #终止日期
+    price: Float #价格
+    createdDate: Date #创建日期
+    createdByUserLogin: String
+    lastModifiedDate: Date #创建者
+    lastModifiedByUserLogin: String #上次修改者
 }
+
 type productFeaturePriceKey{
-    productFeatureId:String
-    productPriceTypeId:String
-    currencyUomId:String
-    fromDate:Date
+    productFeatureId: String
+    productPriceTypeId: String
+    currencyUomId: String
+    fromDate: Date
 }

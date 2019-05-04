@@ -1,19 +1,34 @@
+# import Product from 'product.graphql'
+# import ProductFeature from 'productFeature.graphql'
+# import ProductFeatureIactnType from 'productFeatureIactnType.graphql'
+
 scalar Date
 
-type  productFeatureIactn  {
-    productId:ID!
+type ProductFeatureIactn {
+    productId:String
     productFeatureId:String
     productFeatureIdTo:String
     productFeatureIactnTypeId:String
     lastUpdatedStamp:Date
     createdStamp:Date
     version:Int
+
+    product: Product
+    productFeature: ProductFeature
+    productFeatureIactnType: ProductFeatureIactnType
+}
+
+extend type ProductFeatureIactn {
+    product: Product
+    productFeature: ProductFeature
+    productFeatureIactnType: ProductFeatureIactnType
 }
 
 input ProductFeatureIactnInput{
-    orderByClause:String
-    distinct:Boolean
-    oredCriteria:[Criteria]
+    productId:String
+    productFeatureId:String
+    productFeatureIdTo:String
+    productFeatureIactnTypeId:String
 }
 
 type productFeatureIactnKey{
