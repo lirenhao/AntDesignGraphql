@@ -4,7 +4,14 @@
 
 scalar Date
 
+type ProductFeatureApplKey {
+    productId: String
+    productFeatureId: String
+    fromDate: Date
+}
+
 type ProductFeatureAppl {
+    key: String
     productId: String #产品标识
     productFeatureId: String #产品特征标识
     productFeatureApplTypeId: String #产品特征适用性类型标识
@@ -37,10 +44,4 @@ input ProductFeatureApplInput {
     sequenceNum: Float
     amount: Float
     recurringAmount: Float
-}
-
-type ProductFeatureApplKey {
-    productId: String
-    productFeatureId: String
-    fromDate: Date
 }

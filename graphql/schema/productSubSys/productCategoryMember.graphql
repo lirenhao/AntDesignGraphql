@@ -3,6 +3,12 @@
 
 scalar Date
 
+type ProductCategoryMemberKey{
+    productCategoryId: String
+    productId: String
+    fromDate: Date
+}
+
 type ProductCategoryMember {
     productCategoryId: String #产品类别标识
     productId: String #产品标识
@@ -32,10 +38,4 @@ input ProductCategoryMemberInput{
     comments: String #注释
     sequenceNum: Float #序号数字
     quantity: Float #数量
-}
-
-type productCategoryMemberKey{
-    productCategoryId: String
-    productId: String
-    fromDate: Date
 }

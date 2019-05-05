@@ -4,35 +4,38 @@
 
 scalar Date
 
+type ProductFeatureIactnKey{
+    productId: String
+    productFeatureId: String
+    productFeatureIdTo: String
+}
+
 type ProductFeatureIactn {
-    productId:String
-    productFeatureId:String
-    productFeatureIdTo:String
-    productFeatureIactnTypeId:String
-    lastUpdatedStamp:Date
-    createdStamp:Date
-    version:Int
+    key: String
+    productId: String
+    productFeatureId: String
+    productFeatureIdTo: String
+    productFeatureIactnTypeId: String
+    lastUpdatedStamp: Date
+    createdStamp: Date
+    version: Int
 
     product: Product
     productFeature: ProductFeature
+    productFeatureTo: ProductFeature
     productFeatureIactnType: ProductFeatureIactnType
 }
 
 extend type ProductFeatureIactn {
     product: Product
     productFeature: ProductFeature
+    productFeatureTo: ProductFeature
     productFeatureIactnType: ProductFeatureIactnType
 }
 
 input ProductFeatureIactnInput{
-    productId:String
-    productFeatureId:String
-    productFeatureIdTo:String
-    productFeatureIactnTypeId:String
-}
-
-type productFeatureIactnKey{
-    productId:String
-    productFeatureId:String
-    productFeatureIdTo:String
+    productId: String
+    productFeatureId: String
+    productFeatureIdTo: String
+    productFeatureIactnTypeId: String
 }
